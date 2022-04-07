@@ -1,6 +1,8 @@
 # Web Servidor - UTFPR
 
-### Instruções
+### Required
+- [Docker.com](https://www.docker.com/)
+- [DBdiagram.io](https://dbdiagram.io/)
 
 ### Guide
 ~~~
