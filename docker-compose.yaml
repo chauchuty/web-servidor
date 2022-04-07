@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  php-apache-app:
+    container_name: "php-apache-app"
+    build: .
+    ports:
+      - '80:80'
+    expose:
+      - '80'
+    volumes:
+      - './html:/var/www/html'
+    restart: always
+  
+  adminer:
+    image: adminer
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+    restart: always
