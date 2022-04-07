@@ -1,5 +1,7 @@
 <?php
 require_once './components/header.php';
+require_once './components/navbar.php';
+
 ?>
 
 <table class="table" border="1">
@@ -22,15 +24,7 @@ require_once './components/header.php';
         </td>
         <td>
             <table class="table" border="1">
-                <tr>
-                <td>TIMES 1</td>
-                </tr>
-                <tr>
-                <td>TIMES 2</td>
-                </tr>
-                <td>
-                   
-                </td>
+               
             </table>
         </td>
     </tr>
