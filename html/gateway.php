@@ -26,7 +26,7 @@ function login()
 
     if ($usuario) {
         $_SESSION['id'] = $usuario->getId();
-        $_SESSION['email'] = $usuario->getId();
+        $_SESSION['email'] = $usuario->getEmail();
         header('Location: ./pages/home.page.php');
         exit();
     }

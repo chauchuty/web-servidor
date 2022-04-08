@@ -1,5 +1,8 @@
 <?php
     session_start();
-    echo $_SESSION['id'];
-    echo $_SESSION['email'];
+
+    if(!$_SESSION){
+        header('Location: ./login.page.php');
+        die();
+    }
 ?>

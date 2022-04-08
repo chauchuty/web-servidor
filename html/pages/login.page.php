@@ -1,8 +1,15 @@
-<?php 
-    include('../components/header.php');
-    include('../utilities/erros.utility.php');
-?>
+<?php
+session_start();
 
+if(isset($_SESSION['id'])){
+    header("Location: ./home.page.php");
+}
+
+
+
+include('../components/header.php');
+include('../utilities/erros.utility.php');
+?>
 
 <main class="login-img">
 </main>
@@ -19,11 +26,14 @@
             <span class="login-input-border"></span>
 
             <button class="login-submit">Login</button>
-            <a href="#" class="login-reset">Esqueceu sua senha?</a>
 
-            <p class="login-without">Ainda não possui uma conta? <a href="./cadastro.page.php">Clique aqui!</a></p>
-        </form> 
-        <?php callError('primary')?>
+
+            <p class="login-without">
+                <a href="./cadastro.page.php">Cadastrar!</a>
+            </p>
+
+        </form>
+        <?php callError('primary') ?>
     </div>
 </main>
 </div>

@@ -19,7 +19,6 @@
                 <span class="login-input-border"></span>
 
                 <button class="login-submit">Cadastrar</button>
-                <p class="login-without"><a href="./login.page.php">Voltar para página de login</a></p>
             </form>
         </div>
     </main>
