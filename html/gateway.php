@@ -25,9 +25,10 @@ function login()
     
 
     if ($usuario) {
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['id'] = $usuario->getId();
+        $_SESSION['email'] = $usuario->getId();
         header('Location: ./pages/home.page.php');
         exit();
     }
-    header('Location: ./pages/login.page.php?error=true');
+    header('Location: ./pages/login.page.php?error=1');
 }

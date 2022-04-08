@@ -1,1 +1,4 @@
-Hello!
+<?php
+    require_once './../auth.php';
+
+?>

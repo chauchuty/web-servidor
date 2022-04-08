@@ -1,4 +1,8 @@
-<?php include('../components/header.php') ?>
+<?php 
+    include('../components/header.php');
+    include('../utilities/erros.utility.php');
+?>
+
 
 <main class="login-img">
 </main>
@@ -18,7 +22,8 @@
             <a href="#" class="login-reset">Esqueceu sua senha?</a>
 
             <p class="login-without">Ainda não possui uma conta? <a href="./cadastro.page.php">Clique aqui!</a></p>
-        </form>
+        </form> 
+        <?php callError('primary')?>
     </div>
 </main>
 </div>
