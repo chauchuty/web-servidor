@@ -32,7 +32,7 @@ function login()
         header('Location: ./pages/home.page.php');
         exit();
     }
-    header('Location: ./pages/login.page.php?error=1');
+    header('Location: ./pages/login.php?error=1');
 }
 
 function cadastrar(){
