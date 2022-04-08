@@ -4,12 +4,23 @@ class Usuario {
     private $id;
     private $nome;
     private $email;
-    private $password;
+    private $senha;
+    private $created_at;
+    private $updated_at;
 
-    public function __construct($id, $nome, $email, $password) {
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
         $this->id = $id;
+    }
+
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function setNome($nome) {
         $this->nome = $nome;
-        $this->email = $email;
-        $this->password = $password;
     }
 }
