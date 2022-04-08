@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.login{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    min-height: 392px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    padding: 32px;
+    border-top: 2px solid #490216;
+    border-right: 2px solid #490216;
+    border-bottom: 2px solid #490216;
+    border-radius: 0px 8px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-img{
+    min-height: 460px;
+    width: 500px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.login-title{
+    margin-bottom: 32px;
+    color: #303030;
+}
+
+.login-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-input{
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    border: unset;
+    outline: none;
+}
+
+.login-input-border{
+    height: 1px;
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #cfcfcf;
+    transition: .3s ease-in-out;
+}
+
+.login-input-border::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    margin-bottom: 16px;
+    background: linear-gradient(120deg, #84082b, #490216);
+    transition: .3s ease-in-out;
+}
+
+.login-input:focus + .login-input-border::after{
+    width: 100%;
+}
+
+.login-submit{
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: linear-gradient(120deg, #84082b, #490216, #84082b);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border:unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.login-submit:hover{
+    background-position: right;
+}
+
+.login-reset{
+    font-size: 12px;
+    color: #929292;
+    text-decoration: none;
+}
+
+.login-without{
+    font-size: 13px;
+}
+
+.login-without a{
+    text-decoration: none;
+}
