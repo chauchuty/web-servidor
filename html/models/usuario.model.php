@@ -2,36 +2,14 @@
 
 class Usuario {
     private $id;
-    private $username;
+    private $nome;
+    private $email;
     private $password;
 
-    public function __construct($id, $username, $password) {
+    public function __construct($id, $nome, $email, $password) {
         $this->id = $id;
-        $this->username = $username;
-        $this->password = $password;
-    }
-    
-    public function getId() {
-        return $this->id;
-    }
-
-    public function getUsername() {
-        return $this->username;
-    }
-
-    public function getPassword() {
-        return $this->password;
-    }
-
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    public function setUsername($username) {
-        $this->username = $username;
-    }
-
-    public function setPassword($password) {
+        $this->nome = $nome;
+        $this->email = $email;
         $this->password = $password;
     }
 }
