@@ -5,6 +5,7 @@ class Usuario {
     private $nome;
     private $email;
     private $senha;
+    private $apelido;
     private $created_at;
     private $updated_at;
 
@@ -30,5 +31,21 @@ class Usuario {
 
     public function setEmail($email) {
         $this->email = $email;
+    }
+
+    public function getSenha() {
+        return $this->senha;
+    }
+
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+    public function getApelido() {
+        return $this->apelido;
+    }
+
+    public function setApelido($apelido) {
+        $this->apelido = $apelido;
     }
 }

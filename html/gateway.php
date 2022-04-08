@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 require_once './controller/usuario.controller.php';
 
 // Controllers
@@ -12,6 +11,9 @@ $gateway = [
     "login" => function () {
         return login();
     },
+    "cadastrar" => function (){
+        return cadastrar();
+    }
 ];
 
 $gateway[$_POST['operation']]();
@@ -31,4 +33,8 @@ function login()
         exit();
     }
     header('Location: ./pages/login.page.php?error=1');
+}
+
+function cadastrar(){
+    
 }
