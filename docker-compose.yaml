@@ -21,12 +21,4 @@ services:
     expose:
       - '3306'
     environment:
-      MYSQL_ROOT_PASSWORD: '!!010203'
-  
-  adminer:
-    image: adminer
-    ports:
-      - '8080:8080'
-    expose:
-      - '8080'
-    restart: always
+      MYSQL_ROOT_PASSWORD: '010203'
