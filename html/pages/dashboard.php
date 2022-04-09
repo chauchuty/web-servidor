@@ -1,4 +1,7 @@
-<?php require_once './../components/header.php'; ?>
+<?php 
+require_once './../auth.php'; 
+require_once './../components/header.php'; 
+?>
 
 <body id="page-top">
     <div id="wrapper">

@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require_once './utilities/validate.utility.php';
 require_once './controller/usuario.controller.php';
 
 // Controllers
@@ -23,13 +24,15 @@ $gateway[$_POST['operation']]();
 function login()
 {
     global $usuarioController;
-    $usuario = $usuarioController->findOne($_POST['email'], $_POST['senha']);
+    $usuario = $usuarioController->findOne($_POST['email'], md5($_POST['senha']));
     
 
     if ($usuario) {
         $_SESSION['id'] = $usuario->getId();
+        $_SESSION['nome'] = $usuario->getNome();
         $_SESSION['email'] = $usuario->getEmail();
-        header('Location: ./pages/home.page.php');
+        $_SESSION['is_admin'] = $usuario->getEmail();
+        header('Location: ./pages/dashboard.php');
         exit();
     }
     header('Location: ./pages/login.php?error=1');
@@ -41,7 +44,7 @@ function cadastrarUsuario(){
         $usuario = new Usuario();
         $usuario->setNome($_POST['nome']);
         $usuario->setEmail($_POST['email']);
-        $usuario->setSenha($_POST['senha']);
+        $usuario->setSenha(md5($_POST['senha']));
         $usuario = $usuarioController->insert($usuario);
         header('Location: ./pages/login.php');
         exit();
