@@ -16,6 +16,89 @@ require_once './../components/header.php';
                 <?php require_once './../components/navbar.php'; ?>
                 <!-- NavBar -->
                 <!-- Begin Page Content CODE! -->
+                <!-- <?php
+                        $grupo = [
+                            "A" => [
+                                [
+                                    "time_a" => "Senegal",
+                                    "time_b" => "Holanda",
+                                    "data" => "21/11/2022",
+                                    "horario" => "07:00",
+                                    "local" => "AL THUMAMA",
+                                ],
+                                [
+                                    "time_a" => "Brasil",
+                                    "time_b" => "Argentina",
+                                    "data" => "25/11/2022",
+                                    "horario" => "18:00",
+                                    "local" => "INTERNACIONAL",
+                                ],
+                                [
+                                    "time_a" => "Brasil",
+                                    "time_b" => "Argentina",
+                                    "data" => "25/11/2022",
+                                    "horario" => "18:00",
+                                    "local" => "INTERNACIONAL",
+                                ],
+                                [
+                                    "time_a" => "Brasil",
+                                    "time_b" => "Argentina",
+                                    "data" => "25/11/2022",
+                                    "horario" => "18:00",
+                                    "local" => "INTERNACIONAL",
+                                ],
+
+                            ],
+                            "B" => [
+                                [
+                                    "time_a" => "Senegal",
+                                    "time_b" => "Holanda",
+                                    "data" => "21/11/2022",
+                                    "horario" => "07:00",
+                                    "local" => "AL THUMAMA",
+                                ],
+                                [
+                                    "time_a" => "Brasil",
+                                    "time_b" => "Argentina",
+                                    "data" => "25/11/2022",
+                                    "horario" => "18:00",
+                                    "local" => "INTERNACIONAL",
+                                ],
+                            ]
+                        ];
+                        ?>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Jogo</th>
+                                    <th scope="col">Rodada</th>
+                                    <th scope="col">Seleção</th>
+                                    <th scope="col">Seleção</th>
+                                    <th scope="col">Data/Horário</th>
+                                    <th scope="col">Local</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($grupo as $key => $value) {
+                                    echo "<tr><td><h5>Grupo ". $key ."</h5></td></tr>";
+                                    foreach ($value as $key2 => $value2) {
+                                ?>
+                                        <tr>
+                                            <th scope="row"><?= $key2 + 1 ?></th>
+                                            <td><?= $key2 ?></td>
+                                            <td><?= $value2['time_a'] ?></td>
+                                            <td><?= $value2['time_b'] ?></td>
+                                            <td><?= $value2['data'] . " " . $value2['horario'] ?></td>
+                                            <td><?= $value2['local'] ?></td>
+                                        </tr>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table> -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->

@@ -8,6 +8,11 @@
         <div class="sidebar-brand-text mx-3">WORLD CUP <sup>2022</sup></div>
     </a>
 
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <span>Bem Vindo, <?= explode(' ', $_SESSION['nome'])[0] ?></span>
+        </a>
+    </li>
 
     <div class="sidebar-heading">
         Menu Principal
@@ -66,14 +71,7 @@
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Others...</span></a>
     </li>
 
     <!-- Divider -->
@@ -83,6 +81,12 @@
     <div class="sidebar-heading">
         Opções
     </div>
+
+    <li class="nav-item">
+        <a class="nav-link" href="./../logout.php">
+        <i class="fas fa-user"></i>
+            <span>Perfil</span></a>
+    </li>
 
     <li class="nav-item">
         <a class="nav-link" href="./../logout.php">
