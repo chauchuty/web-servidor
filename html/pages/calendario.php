@@ -16,7 +16,43 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Calendário</h1>
+
+
+                    <!-- Dados Mock  -->
+                    <?php
+                    $jogos = [
+                        [
+                            "time_a" => "Senegal",
+                            "time_b" => "Holanda",
+                            "data" => "21/06/2020",
+                            "horario" => "19:00",
+                        ],
+                    ];
+                    ?>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Time A</th>
+                                <th scope="col">Time B</th>
+                                <th scope="col">Data/Horário</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($jogos as $key => $jogo) {
+                                echo "<tr>";
+                                echo "<th scope='row'>" . $key + 1 . "</th>";
+                                echo "<td>" . $jogo["time_a"] . "</td>";
+                                echo "<td>" . $jogo["time_b"] . "</td>";
+                                echo "<td>" . $jogo["data"] . " - " . $jogo["horario"] . "</td>";
+                                echo "</tr>";
+                            }
+
+                            ?>
+                        </tbody>
+                    </table>
 
                 </div>
                 <!-- End Page Content CODE! -->
