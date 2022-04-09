@@ -54,7 +54,7 @@ function cadastrarUsuario(){
         header('Location: ./pages/login.php');
         exit();
     }
-    header('Location: ./pages/cadastro.php?error=2');
+    header('Location: ./pages/cadastrar.php?error=2');
 }
 
 function cadastrarTeam(){

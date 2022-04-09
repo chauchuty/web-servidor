@@ -33,7 +33,7 @@ require_once './../controller/team.controller.php';
                             <th>#</th>
                             <th>Nome</th>
                             <th>Sigla</th>
-                            <th>Link</th>
+                            <th>Escudo</th>
                             <th>Ações</th>
                         </thead>
                         <tbody>
