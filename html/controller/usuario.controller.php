@@ -31,4 +31,14 @@ class UsuarioController
         $query->execute();
         return $query->fetchObject("Usuario");
     }
+
+    function insert($usuario){
+        global $db;
+        $query = $db->prepare('INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)');
+        $query->bindValue(':nome', $usuario->getNome());
+        $query->bindValue(':email', $usuario->getEmail());
+        $query->bindValue(':senha', $usuario->getSenha());
+        $query->execute();
+        return $query->fetchObject("Usuario");
+    }
 }

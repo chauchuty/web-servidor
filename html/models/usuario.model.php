@@ -5,9 +5,6 @@ class Usuario {
     private $nome;
     private $email;
     private $senha;
-    private $apelido;
-    private $created_at;
-    private $updated_at;
 
     public function getId() {
         return $this->id;
@@ -39,13 +36,5 @@ class Usuario {
 
     public function setSenha($senha) {
         $this->senha = $senha;
-    }
-
-    public function getApelido() {
-        return $this->apelido;
-    }
-
-    public function setApelido($apelido) {
-        $this->apelido = $apelido;
     }
 }

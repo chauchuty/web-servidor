@@ -10,7 +10,9 @@
             global $errors;
             global $error;
             if ($error) {
-                echo "<p>{$errors[$error]}</p>";
+                echo "<center><p>{$errors[$error]}</p></center>";
             }
         }
 ?>
+
+<!-- login.php?error=1 -->
