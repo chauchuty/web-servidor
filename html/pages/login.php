@@ -31,7 +31,7 @@ require_once './../components/header.php';
                                     <form class="user" action="./../gateway.php" method="post">
                                         <input name="operation" value="login" hidden />
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Digite seu email..." autocomplete="off" name="email" value="admin@gmail.com">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Digite seu email..." autocomplete="off" name="email" value="admin@admin.com">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Digite sua senha" autocomplete="off" name="senha" value="@!010203">
