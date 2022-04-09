@@ -1,6 +1,5 @@
 <?php
-require './db.php';
-
+require_once dirname(__FILE__) . './../db.php';
 require_once dirname(__FILE__) . './../models/team.model.php';
 
 class TeamController
@@ -8,29 +7,29 @@ class TeamController
     function getAll()
     {
         global $db;
-        $query = $db->prepare('SELECT * FROM usuario');
+        $query = $db->prepare('SELECT * FROM team');
         $query->execute();
-        return $query->fetchAll();
+        return $query;
     }
 
-    function getOne($id)
-    {
-        global $db;
-        $query = $db->prepare('SELECT * FROM usuario WHERE id = :id');
-        $query->bindValue(':id', $id);
-        $query->execute();
-        return $query->fetch();
-    }
+    // function getOne($id)
+    // {
+    //     global $db;
+    //     $query = $db->prepare('SELECT * FROM usuario WHERE id = :id');
+    //     $query->bindValue(':id', $id);
+    //     $query->execute();
+    //     return $query->fetchObject('Team');
+    // }
 
-    function findOne($email, $senha)
-    {
-        global $db;
-        $query = $db->prepare('SELECT * FROM usuario WHERE email = :email AND senha = :senha');
-        $query->bindValue(':email', $email);
-        $query->bindValue(':senha', $senha);
-        $query->execute();
-        return $query->fetchObject("Usuario");
-    }
+    // function findOne($email, $senha)
+    // {
+    //     global $db;
+    //     $query = $db->prepare('SELECT * FROM usuario WHERE email = :email AND senha = :senha');
+    //     $query->bindValue(':email', $email);
+    //     $query->bindValue(':senha', $senha);
+    //     $query->execute();
+    //     return $query->fetchObject("Team");
+    // }
 
     function insert($team){
         global $db;
@@ -39,6 +38,6 @@ class TeamController
         $query->bindValue(':sigla', $team->getSigla());
         $query->bindValue(':escudo', $team->getEscudo());
         $query->execute();
-        return $query->fetchObject("Usuario");
+        return $query->fetchObject("Team");
     }
 }

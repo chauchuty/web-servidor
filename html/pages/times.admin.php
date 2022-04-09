@@ -1,6 +1,7 @@
 <?php
 require_once './../auth.php';
 require_once './../components/header.php';
+require_once './../controller/team.controller.php';
 ?>
 
 <body id="page-top">
@@ -20,7 +21,7 @@ require_once './../components/header.php';
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Times</h1>
 
-                    <a href="#" class="btn btn-primary btn-icon-split btn-sm float-right mb-3" data-toggle="modal" data-target="#novoTimeModal">
+                    <a href="#" class="btn btn-primary btn-icon-split btn-sm float-right mb-3" data-toggle="modal" data-target="#timeModal">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
@@ -28,56 +29,40 @@ require_once './../components/header.php';
                     </a>
 
                     <table class="table table-bordered table-striped table-md table-dark text-center small">
+                        <thead>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Sigla</th>
+                            <th>Link</th>
+                            <th>Ações</th>
+                        </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="2" class="text-left">Sábado 09 de Abril</td>
-                                <td>Seleção 1</td>
-                                <td>Empate</td>
-                                <td>Seleção 2</td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">16:30</td>
-                                <td class="align-middle text-left">
-                                    <div>
-                                        <img src="./../assets/img/brazil.logo.png" class="img-fluid" width="25">
-                                        Brasil <sup>s1</sup>
-                                    </div>
-                                    <div class="mt-2">
-                                        <img src="./../assets/img/argentina.logo.png" class="img-fluid" width="25">
-                                        Argentina <sup>s2</sup>
-                                    </div>
+                            <?php
+                            $teamController = new TeamController();
+                            $teams = $teamController->getAll();
 
-                                </td>
-                                <td class="align-middle">
-                                    <a href="#" class="btn btn-success btn-icon-split btn-sm" id="s1">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-coins"></i>
-                                        </span>
-                                        <span class="text">1.75</span>
-                                    </a>
-                                </td>
-                                <td class="align-middle">
-                                    <a href="#" class="btn btn-info btn-icon-split btn-sm" id="s1">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-coins"></i>
-                                        </span>
-                                        <span class="text">1.15</span>
-                                    </a>
-                                </td>
-                                <td class="align-middle">
-                                    <a href="#" class="btn btn-warning btn-icon-split btn-sm" id="s1">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-coins"></i>
-                                        </span>
-                                        <span class="text">2.55</span>
-                                    </a>
-                                </td>
-
-                            </tr>
+                            while ($team = $teams->fetchObject('Team')) {
+                            ?>
+                                <tr>
+                                    <td><?= $team->getId() ?></td>
+                                    <td><?= $team->getNome() ?></td>
+                                    <td><?= $team->getSigla() ?></td>
+                                    <td><?= $team->getEscudo() ?></td>
+                                    <td>
+                                        <a id="<?= $team->getId();?>"href="#" class="btn btn-warning btn-circle btn-sm mr-3" data-toggle="modal" data-target="#timeModal">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
                 <!-- End Page Content CODE! -->
+
 
             </div>
             <!-- End of Main Content -->
@@ -98,6 +83,5 @@ require_once './../components/header.php';
     </div>
     <!-- End of Page Wrapper -->
 
-    <?php require_once './../components/novo_time.modal.php'; ?>
-
     <?php require_once './../components/footer.php'; ?>
+    <?php require_once './../components/time.modal.php'; ?>
