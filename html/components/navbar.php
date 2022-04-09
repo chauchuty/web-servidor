@@ -77,9 +77,9 @@
     <!-- Nav Item - Messages -->
     <li class="nav-item dropdown no-arrow mx-1">
       <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-envelope fa-fw"></i>
+      <!-- <i class="fas fa-dollar-sign"></i> -->
         <!-- Counter - Messages -->
-        <span class="badge badge-danger badge-counter">7</span>
+        <span class="badge badge-primary ml-2">Palpites 150</span>
       </a>
       <!-- Dropdown - Messages -->
       <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
@@ -88,7 +88,7 @@
         </h6>
         <a class="dropdown-item d-flex align-items-center" href="#">
           <div class="dropdown-list-image mr-3">
-            <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+            <img class="rounded-circle" src="./../assets/img/undraw_profile_1.svg" alt="...">
             <div class="status-indicator bg-success"></div>
           </div>
           <div class="font-weight-bold">
@@ -99,7 +99,7 @@
         </a>
         <a class="dropdown-item d-flex align-items-center" href="#">
           <div class="dropdown-list-image mr-3">
-            <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+            <img class="rounded-circle" src="./../assets/img/undraw_profile_2.svg" alt="...">
             <div class="status-indicator"></div>
           </div>
           <div>
@@ -110,7 +110,7 @@
         </a>
         <a class="dropdown-item d-flex align-items-center" href="#">
           <div class="dropdown-list-image mr-3">
-            <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+            <img class="rounded-circle" src="./../assets/" alt="...">
             <div class="status-indicator bg-warning"></div>
           </div>
           <div>
