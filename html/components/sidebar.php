@@ -38,30 +38,15 @@
 
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-coins"></i>
-            <span>Apostas</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
             <i class="fas fa-chart-line"></i>
             <span>Resultados</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        USUÁRIO
-    </div>
-
     <li class="nav-item">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-chart-line"></i>
+            <i class="fas fa-coins"></i>
             <span>Minhas Apostas</span></a>
     </li>
-
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -75,19 +60,24 @@
             ADMIN
         </div>
 
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item  -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Others...</span></a>
+            <a class="nav-link" href="#">
+                <i class="fas fa-user"></i>
+                <span>Usuários</span></a>
+        </li>
+
+        <!-- Nav Item  -->
+        <li class="nav-item">
+            <a class="nav-link" href="./times.admin.php">
+                <i class="fas fa-users"></i>
+                <span>Seleções / Times</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
     <?php
     }
     ?>
-
-
 
     <!-- Heading -->
     <div class="sidebar-heading">
@@ -107,4 +97,4 @@
     </li>
 </ul>
 
-<?php require_once './../components/logout.modal.php'?>
+<?php require_once './../components/logout.modal.php' ?>

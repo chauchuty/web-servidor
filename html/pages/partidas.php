@@ -20,20 +20,19 @@ require_once './../components/header.php';
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Partidas</h1>
 
-                    <table class="table table-bordered table-striped table-md table-dark text-center small">
+                    <table class="table table-bordered table-striped table-md table-dark text-center small border-bottom-success border-left-success">
                         <tbody>
                             <tr>
                                 <td colspan="2" class="text-left">Sábado 09 de Abril</td>
                                 <td>Seleção 1</td>
-                                <td>x</td>
+                                <td>Empate</td>
                                 <td>Seleção 2</td>
-                                <td>Palpitar</td>
                             </tr>
                             <tr>
                                 <td class="align-middle">16:30</td>
                                 <td class="align-middle text-left">
                                     <div>
-                                        <img src="./../assets/img/brazil.logo.png" class="img-fluid " width="25">
+                                        <img src="./../assets/img/brazil.logo.png" class="img-fluid" width="25">
                                         Brasil <sup>s1</sup>
                                     </div>
                                     <div class="mt-2">
@@ -43,35 +42,30 @@ require_once './../components/header.php';
 
                                 </td>
                                 <td class="align-middle">
-                                    <a href="#" class="btn btn-dark btn-icon-split btn-sm" id="s1">
+                                    <a href="#" class="btn btn-success btn-icon-split btn-sm" id="s1">
                                         <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
+                                            <i class="fas fa-coins"></i>
                                         </span>
                                         <span class="text">1.75</span>
                                     </a>
                                 </td>
                                 <td class="align-middle">
-                                    <a href="#" class="btn btn-dark btn-icon-split btn-sm" id="s2">
+                                    <a href="#" class="btn btn-info btn-icon-split btn-sm" id="s1">
                                         <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
+                                            <i class="fas fa-coins"></i>
                                         </span>
                                         <span class="text">1.15</span>
                                     </a>
                                 </td>
-                                <td class="align-middle"> <a href="#" class="btn btn-dark btn-icon-split btn-sm">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                        <span class="text">1.75</span>
-                                    </a></td>
                                 <td class="align-middle">
-                                    <a href="#" class="btn btn-success btn-sm">
+                                    <a href="#" class="btn btn-warning btn-icon-split btn-sm" id="s1">
                                         <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
+                                            <i class="fas fa-coins"></i>
                                         </span>
-                                        <span class="text">Apostar</span>
+                                        <span class="text">2.55</span>
                                     </a>
                                 </td>
+                                
                             </tr>
                         </tbody>
                     </table>

@@ -3,9 +3,11 @@ session_start();
 
 require_once './utilities/validate.utility.php';
 require_once './controller/usuario.controller.php';
+require_once './controller/team.controller.php';
 
 // Controllers
 $usuarioController = new UsuarioController();
+$teamController = new TeamController();
 
 // Module
 $gateway = [
@@ -14,6 +16,9 @@ $gateway = [
     },
     "cadastrarUsuario" => function (){
         return cadastrarUsuario();
+    },
+    "cadastrarTeam" => function (){
+        return cadastrarTeam();
     }
 ];
 
@@ -50,4 +55,17 @@ function cadastrarUsuario(){
         exit();
     }
     header('Location: ./pages/cadastro.php?error=2');
+}
+
+function cadastrarTeam(){
+    global $teamController;
+    if($_POST['nome'] && isSigla($_POST['sigla']) && isLink($_POST['escudo'])){
+        $team = new Team();
+        $team->setNome($_POST['nome']);
+        $team->setSigla($_POST['sigla']);
+        $team->setEscudo($_POST['escudo']);
+        $team = $teamController->insert($team);
+        header('Location: ./pages/times.admin.php');
+        exit();
+    }
 }
