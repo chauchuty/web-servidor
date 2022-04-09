@@ -85,7 +85,7 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="./../logout.php">
             <i class="fas fa-door-open"></i>
             <span>Sair</span></a>
     </li>
