@@ -1,8 +1,6 @@
 <?php
-    session_start();
-
-    if(!$_SESSION){
-        header('Location: ./login.page.php');
+    if(!isset($_SESSION['id'])){
+        header('Location: login.php');
         die();
     }
 ?>

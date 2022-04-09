@@ -1,4 +1,11 @@
-<?php require_once './../components/header.php'; ?>
+<?php
+require_once './../components/header.php';
+
+if (isset($_SESSION['id'])) {
+    header("Location: ./dashboard.php");
+}
+
+?>
 
 <body class="bg-gradient-dark">
 
@@ -22,13 +29,10 @@
                                     <form class="user" action="./../gateway.php" method="post">
                                         <input name="operation" value="login" hidden />
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Digite seu email..." autocomplete="off" name="email">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Digite seu email..." autocomplete="off" name="email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Digite sua senha" autocomplete="off" name="senha">
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Digite sua senha" autocomplete="off" name="senha">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -66,4 +70,4 @@
 
     </div>
 
-<?php require_once './../components/footer.php'; ?>
+    <?php require_once './../components/footer.php'; ?>

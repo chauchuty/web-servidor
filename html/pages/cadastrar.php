@@ -1,6 +1,6 @@
 <?php require_once './../components/header.php'; ?>
 
-<body class="bg-gradient-dark">
+<body class="bg-gradient-success">
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
