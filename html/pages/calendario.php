@@ -23,20 +23,34 @@
                     <?php
                     $jogos = [
                         [
+                            "Rodada" => "1",
                             "time_a" => "Senegal",
                             "time_b" => "Holanda",
-                            "data" => "21/06/2020",
-                            "horario" => "19:00",
+                            "data" => "21/11/2022",
+                            "horario" => "07:00",
+                            "local" => "AL THUMAMA",
+                        ],
+                        [
+                            "Rodada" => "1",
+                            "time_a" => "Catar",
+                            "time_b" => "Equador",
+                            "data" => "21/11/2022",
+                            "horario" => "13:00",
+                            "local" => "AL KHOR",
                         ],
                     ];
                     ?>
-                    <table class="table">
+                    <h5>Grupo A</h5>
+                    <table class="table full-widith">
+                   
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Time A</th>
-                                <th scope="col">Time B</th>
+                                <th scope="col">Jogo</th>
+                                <th scope="col">Rodada</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Seleção</th>
                                 <th scope="col">Data/Horário</th>
+                                <th scope="col">Local</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,9 +58,11 @@
                             foreach ($jogos as $key => $jogo) {
                                 echo "<tr>";
                                 echo "<th scope='row'>" . $key + 1 . "</th>";
+                                echo "<td>" . $jogo["Rodada"] . "</td>";
                                 echo "<td>" . $jogo["time_a"] . "</td>";
                                 echo "<td>" . $jogo["time_b"] . "</td>";
                                 echo "<td>" . $jogo["data"] . " - " . $jogo["horario"] . "</td>";
+                                echo "<td>" . $jogo["local"] . "</td>";  
                                 echo "</tr>";
                             }
 
@@ -54,11 +70,169 @@
                         </tbody>
                     </table>
 
+
+                    <?php
+                    $jogos = [
+                        [
+                            "Rodada" => "2",
+                            "time_a" => "Catar",
+                            "time_b" => "Senegal",
+                            "data" => "25/11/2022",
+                            "horario" => "10:00",
+                            "local" => "AL THUMAMA",
+                        ],
+                        [
+                            "Rodada" => "2",
+                            "time_a" => "Holandia",
+                            "time_b" => "Equador",
+                            "data" => "21/11/2022",
+                            "horario" => "13:00",
+                            "local" => "INTERNATIONAL KHALIFA",
+                        ],
+                    ];
+                    ?>
+                    <h5>Grupo A</h5>
+                    <table class="table full-width">
+                   
+                        <thead>
+                            <tr>
+                                <th scope="col">Jogo</th>
+                                <th scope="col">Rodada</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Data/Horário</th>
+                                <th scope="col">Local</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($jogos as $key => $jogo) {
+                                echo "<tr>";
+                                echo "<th scope='row'>" . $key + 1 . "</th>";
+                                echo "<td>" . $jogo["Rodada"] . "</td>";
+                                echo "<td>" . $jogo["time_a"] . "</td>";
+                                echo "<td>" . $jogo["time_b"] . "</td>";
+                                echo "<td>" . $jogo["data"] . " - " . $jogo["horario"] . "</td>";
+                                echo "<td>" . $jogo["local"] . "</td>";  
+                                echo "</tr>";
+                            }
+
+                            ?>
+                        </tbody>
+                    </table>
+
+                    <?php
+                    $jogos = [
+                        [
+                            "Rodada" => "3",
+                            "time_a" => "Holandia",
+                            "time_b" => "Catar",
+                            "data" => "29/11/2022",
+                            "horario" => "12:00",
+                            "local" => "AL KHOR",
+                        ],
+                        [
+                            "Rodada" => "3",
+                            "time_a" => "Equador",
+                            "time_b" => "Senegal",
+                            "data" => "29/11/2022",
+                            "horario" => "12:00",
+                            "local" => "INTERNATIONAL KHALIFA",
+                        ],
+                    ];
+                    ?>
+                    <h5>Grupo A</h5>
+                    <table class="table">
+                   
+                        <thead>
+                            <tr >
+                                <th scope="col">#</th>
+                                <th scope="col">Rodada</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Data/Horário</th>
+                                <th scope="col">Local</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($jogos as $key => $jogo) {
+                                echo "<th scope='row'>" . $key + 1 . "</th>";
+                                echo "<td>" . $jogo["Rodada"] . "</td>";
+                                echo "<td>" . $jogo["time_a"] . "</td>";
+                                echo "<td>" . $jogo["time_b"] . "</td>";
+                                echo "<td>" . $jogo["data"] . " - " . $jogo["horario"] . "</td>";
+                                echo "<td>" . $jogo["local"] . "</td>";
+                                echo "</tr>";
+                            }
+
+                            ?>
+                        </tbody>
+                    </table>
+
+                    <?php
+                    $jogos = [
+                        [
+                            "Rodada" => "1",
+                            "time_a" => "Inglaterra",
+                            "time_b" => "Irã",
+                            "data" => "21/11/2022",
+                            "horario" => "10:00",
+                            "local" => "INTERNACIONAL KHALIFA ",
+                        ],
+                        [
+                            "Rodada" => "1",
+                            "time_a" => "EUA",
+                            "time_b" => "EUR",
+                            "data" => "21/11/2022",
+                            "horario" => "16:00",
+                            "local" => " AL RAHMA",
+                        ],
+                    ];
+                    ?>
+                    <h5>Grupo B</h5>
+                    <table class="table full-widith" >
+                   
+                        <thead>
+                            <tr>
+                                <th scope="col">Jogo</th>
+                                <th scope="col">Rodada</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Seleção</th>
+                                <th scope="col">Data/Horário</th>
+                                <th scope="col">Local</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($jogos as $key => $jogo) {
+                                echo "<tr>";
+                                echo "<th scope='row'>" . $key + 1 . "</th>";
+                                echo "<td>" . $jogo["Rodada"] . "</td>";
+                                echo "<td>" . $jogo["time_a"] . "</td>";
+                                echo "<td>" . $jogo["time_b"] . "</td>";
+                                echo "<td>" . $jogo["data"] . " - " . $jogo["horario"] . "</td>";
+                                echo "<td>" . $jogo["local"] . "</td>";  
+                                echo "</tr>";
+                            }
+
+                            ?>
+                        </tbody>
+                    </table>
+
+
+
+
                 </div>
                 <!-- End Page Content CODE! -->
 
             </div>
             <!-- End of Main Content -->
+
+
+
+
+
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
