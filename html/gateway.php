@@ -31,7 +31,7 @@ function login()
         $_SESSION['id'] = $usuario->getId();
         $_SESSION['nome'] = $usuario->getNome();
         $_SESSION['email'] = $usuario->getEmail();
-        $_SESSION['is_admin'] = $usuario->getEmail();
+        $_SESSION['is_admin'] = $usuario->getIsAdmin();
         header('Location: ./pages/dashboard.php');
         exit();
     }

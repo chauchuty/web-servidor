@@ -63,19 +63,27 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
-        ADMIN
-    </div>
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Others...</span></a>
-    </li>
+    <?php
+    if ($_SESSION['is_admin'] == 1) {
+    ?>
+        <div class="sidebar-heading">
+            ADMIN
+        </div>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Others...</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+    <?php
+    }
+    ?>
+
+
 
     <!-- Heading -->
     <div class="sidebar-heading">
@@ -84,7 +92,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="./../logout.php">
-        <i class="fas fa-user"></i>
+            <i class="fas fa-user"></i>
             <span>Perfil</span></a>
     </li>
 
