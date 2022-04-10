@@ -19,9 +19,9 @@ require_once './../controller/team.controller.php';
                 <!-- Begin Page Content CODE! -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Times</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Seleções</h1>
 
-                    <a href="#" class="btn btn-primary btn-icon-split btn-sm float-right mb-3" data-toggle="modal" data-target="#timeModal">
+                    <a href="#" class="btn btn-primary btn-icon-split btn-sm float-right mb-3" data-toggle="modal" data-target="#timeModalCadastrar">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
@@ -51,13 +51,13 @@ require_once './../controller/team.controller.php';
                                         <img src="<?= $team->getEscudo() ?>" width="25" />
                                     </td>
                                     <td width="280">
-                                        <a href="./teams.admin.edit.php?id=<?= $team->getId() ?>" class="btn btn-info btn-icon-split btn-sm mr-2" id="s1">
+                                        <a href="./teams.admin.edit.php?id=<?= $team->getId() ?>" class="btn btn-info btn-icon-split btn-sm mr-2">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
                                             <span class="text">Editar</span>
                                         </a>
-                                        <a href="./../gateway.php?operation=deletarTeam&id=<?= $team->getId()?>" class="btn btn-danger btn-icon-split btn-sm" id="s1">
+                                        <a href="#" class="btn btn-danger btn-icon-split btn-sm" value="<?= $team->getId() ?>" data-toggle="modal" data-target="#timeModalDeletar">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>
@@ -92,4 +92,5 @@ require_once './../controller/team.controller.php';
     <!-- End of Page Wrapper -->
 
     <?php require_once './../components/footer.php'; ?>
-    <?php require_once './../components/team.modal.php'; ?>
+    <?php require_once './../components/team.modal.cadastrar.php'; ?>
+    <?php require_once './../components/team.modal.deletar.php'; ?>
