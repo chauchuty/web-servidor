@@ -54,7 +54,7 @@
     <!-- Heading -->
 
     <?php
-    if ($_SESSION['is_admin'] == 1) {
+    if ($_SESSION['is_admin']) {
     ?>
         <div class="sidebar-heading">
             ADMIN
@@ -69,9 +69,9 @@
 
         <!-- Nav Item  -->
         <li class="nav-item">
-            <a class="nav-link" href="./times.admin.php">
+            <a class="nav-link" href="./teams.admin.php">
                 <i class="fas fa-users"></i>
-                <span>Seleções / Times</span></a>
+                <span>Seleções</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
