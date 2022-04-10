@@ -21,16 +21,6 @@ class TeamController
         return $query->fetchObject('Team');
     }
 
-    // function findOne($email, $senha)
-    // {
-    //     global $db;
-    //     $query = $db->prepare('SELECT * FROM usuario WHERE email = :email AND senha = :senha');
-    //     $query->bindValue(':email', $email);
-    //     $query->bindValue(':senha', $senha);
-    //     $query->execute();
-    //     return $query->fetchObject("Team");
-    // }
-
     function insert($team){
         global $db;
         $query = $db->prepare('INSERT INTO team (nome, sigla, escudo) VALUES (:nome, :sigla, :escudo)');
@@ -58,5 +48,12 @@ class TeamController
         $query->bindValue(':id', $id);
         $query->execute();
         return $query->fetchObject("Team");
+    }
+
+    function getCount(){
+        global $db;
+        $query = $db->prepare('SELECT COUNT(*) FROM team');
+        $query->execute();
+        return $query->fetchColumn();
     }
 }

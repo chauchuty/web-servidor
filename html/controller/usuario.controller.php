@@ -41,4 +41,11 @@ class UsuarioController
         $query->execute();
         return $query->fetchObject("Usuario");
     }
+
+    function getCount(){
+        global $db;
+        $query = $db->prepare('SELECT COUNT(*) FROM usuario');
+        $query->execute();
+        return $query->fetchColumn();
+    }
 }

@@ -1,6 +1,10 @@
-<?php 
-require_once './../auth.php'; 
-require_once './../components/header.php'; 
+<?php
+require_once './../auth.php';
+require_once './../components/header.php';
+require_once './../controller/usuario.controller.php';
+require_once './../controller/team.controller.php';
+$usuarioController = new UsuarioController();
+$teamController = new TeamController();
 ?>
 
 <body id="page-top">
@@ -20,7 +24,20 @@ require_once './../components/header.php';
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
-
+                    <div class="card" style="width: 12rem;">
+                        <i class="fas fa-users fa-2x pt-3 pl-3"></i>
+                        <div class="card-body">
+                            <!-- <h5 class="card-title">Usuários</h5> -->
+                            <h5 class="card-text">Usuários: <?= $usuarioController->getCount() ?></h5>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 12rem;">
+                        <i class="fas fa-flag fa-2x pt-3 pl-3"></i>
+                        <div class="card-body">
+                            <!-- <h5 class="card-title">Usuários</h5> -->
+                            <h5 class="card-text">Seleções: <?= $teamController->getCount() ?></h5>
+                        </div>
+                    </div>
                 </div>
                 <!-- End Page Content CODE! -->
 
