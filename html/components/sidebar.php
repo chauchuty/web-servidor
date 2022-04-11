@@ -63,16 +63,24 @@
         <!-- Nav Item  -->
         <li class="nav-item">
             <a class="nav-link" href="./usuarios.admin.php">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-users"></i>
                 <span>Usuários</span></a>
         </li>
 
         <!-- Nav Item  -->
         <li class="nav-item">
             <a class="nav-link" href="./teams.admin.php">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-flag"></i>
                 <span>Seleções</span></a>
         </li>
+
+        <!-- Nav Item  -->
+        <li class="nav-item">
+            <a class="nav-link" href="./partidas.admin.php">
+                <i class="fas fa-calendar"></i>
+                <span>Partidas</span></a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
     <?php

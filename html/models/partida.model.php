@@ -3,10 +3,10 @@ class Team
 {
     private $id;
     private $data_inicio;
-    private $data_fim;
     private $team_a;
     private $team_b;
-    private $vencedor;
+    private $resultado;
+    private $status;
 
     public function toJson()
     {
@@ -14,10 +14,10 @@ class Team
         [
             'id' => $this->getId(),
             'data_inicio' => $this->getDataInicio(),
-            'data_fim' => $this->getDataFim(),
             'team_a' => $this->getTeamA(),
             'team_b' => $this->getTeamB(),
-            'vencedor' => $this->getVencedor(),
+            'resultado' => $this->getResultado(),
+            'status' => $this->getStatus()
         ]);
     }
 
@@ -41,16 +41,6 @@ class Team
         $this->data_inicio = $data_inicio;
     }
 
-    public function getDataFim()
-    {
-        return $this->data_fim;
-    }
-
-    public function setDataFim($data_fim)
-    {
-        $this->data_fim = $data_fim;
-    }
-
     public function getTeamA()
     {
         return $this->team_a;
@@ -71,6 +61,16 @@ class Team
         $this->team_b = $team_b;
     }
 
+    public function getResultado()
+    {
+        return $this->resultado;
+    }
+
+    public function setResultado($resultado)
+    {
+        $this->resultado = $resultado;
+    }
+
     public function getVencedor()
     {
         return $this->vencedor;
@@ -79,5 +79,15 @@ class Team
     public function setVencedor($vencedor)
     {
         $this->vencedor = $vencedor;
-    }   
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
 }
