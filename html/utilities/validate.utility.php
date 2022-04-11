@@ -1,5 +1,19 @@
 <?php
 
+    function isAdmin($session){
+        return $session == 1 ? true : false;
+    }
+    
+    function isEmpty($value)
+    {
+        return $value == '';
+    }
+    
+    function isInteger ($value)
+    {
+        return is_numeric($value) && is_int($value + 0);
+    }
+
     function isFullName ($fullName) {
         if (strlen($fullName) < 3) {
             return false;
@@ -22,4 +36,3 @@
     function isSigla ($sigla) {
         return preg_match('/^[a-zA-Z]{3}/', $sigla);
     }
-?>

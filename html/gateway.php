@@ -20,6 +20,12 @@ $gateway = [
     "cadastrarUsuario" => function () {
         return cadastrarUsuario();
     },
+    "atualizarUsuario" => function () {
+        return atualizarUsuario();
+    },
+    "deletarUsuario" => function () {
+        return deletarUsuario();
+    },
     "getTeam" => function () {
         return getTeam();
     },
@@ -66,31 +72,61 @@ function login()
 
 function getUsuario()
 {
-    global $teamController;
-    $team = $teamController->getOne($_GET['id']);
-    print_r($team);
+    global $usuarioController;
+    $usuario = $usuarioController->getOne($_GET['id']);
+    echo $usuario->toJson();
 }
 
 function cadastrarUsuario()
 {
+    isset($_SESSION['is_admin']) ? $is_admin = $_SESSION['is_admin'] : $is_admin = 0;
+
     global $usuarioController;
-    if (isEmail($_POST['email']) && isFullName($_POST['nome']) && isPasswordValid($_POST['senha']) && $_POST['senha'] == $_POST['senha_repetida']) {
+    if (isFullName($_POST['nome']) && isEmail($_POST['email']) && isPasswordValid($_POST['senha']) && $_POST['senha'] == $_POST['senha_repetida']) {
         $usuario = new Usuario();
         $usuario->setNome($_POST['nome']);
         $usuario->setEmail($_POST['email']);
         $usuario->setSenha(md5($_POST['senha']));
+        $is_admin == 1 ? $usuario->setCreditos($_POST['creditos']) : null;
         $usuario = $usuarioController->insert($usuario);
-        header('Location: ./pages/login.php');
+        header('Location: ./pages/usuarios.admin.php');
         exit();
     }
     header('Location: ./pages/cadastrar.php?error=2');
 }
 
+function atualizarUsuario()
+{
+    global $usuarioController;
+    if (isFullName($_POST['nome']) && isEmail($_POST['email']) && isset($_POST['is_admin']) && isInteger($_POST['creditos'])) {
+        $usuario = new Usuario();
+        $usuario->setId($_POST['id']);
+        $usuario->setNome($_POST['nome']);
+        $usuario->setEmail($_POST['email']);
+        !isEmpty($_POST['senha']) ? $usuario->setSenha(md5($_POST['senha'])) : null;
+        $usuario->setCreditos($_POST['creditos']);
+        $usuario->setIsAdmin($_POST['is_admin']);
+        $usuario = $usuarioController->update($usuario);
+        // header('Location: ./pages/usuarios.admin.php');
+        exit();
+    }
+    // header('Location: ./pages/cadastrar.php?error=2');
+}
+
+function deletarUsuario()
+{
+    global $usuarioController;
+    $team = $usuarioController->delete($_GET['id']);
+    header('Location: ./pages/usuarios.admin.php');
+    exit();
+}
+
+
 function getTeam()
 {
     global $teamController;
     $team = $teamController->getOne($_GET['id']);
-    return $team;
+    echo $team->toJson();
 }
 
 function cadastrarTeam()
@@ -107,7 +143,8 @@ function cadastrarTeam()
     }
 }
 
-function atualizarTeam(){
+function atualizarTeam()
+{
     global $teamController;
     if ($_POST['nome'] && isSigla($_POST['sigla']) && isLink($_POST['escudo'])) {
         $team = new Team();
@@ -121,7 +158,8 @@ function atualizarTeam(){
     }
 }
 
-function deletarTeam(){
+function deletarTeam()
+{
     global $teamController;
     $team = $teamController->delete($_GET['id']);
     header('Location: ./pages/teams.admin.php');

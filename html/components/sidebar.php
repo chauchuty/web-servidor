@@ -37,13 +37,13 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="#">
             <i class="fas fa-chart-line"></i>
             <span>Resultados</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="#">
             <i class="fas fa-coins"></i>
             <span>Minhas Apostas</span></a>
     </li>
@@ -62,7 +62,7 @@
 
         <!-- Nav Item  -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="./usuarios.admin.php">
                 <i class="fas fa-user"></i>
                 <span>Usuários</span></a>
         </li>

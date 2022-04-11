@@ -51,7 +51,7 @@ require_once './../controller/team.controller.php';
                                         <img src="<?= $team->getEscudo() ?>" width="25" />
                                     </td>
                                     <td width="280">
-                                        <a href="./teams.admin.edit.php?id=<?= $team->getId() ?>" class="btn btn-info btn-icon-split btn-sm mr-2">
+                                        <a href="#" class="btn btn-info btn-icon-split btn-sm mr-2" value="<?= $team->getId() ?>" data-toggle="modal" data-target="#selecaoModalEditar">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
@@ -92,5 +92,6 @@ require_once './../controller/team.controller.php';
     <!-- End of Page Wrapper -->
 
     <?php require_once './../components/footer.php'; ?>
-    <?php require_once './../components/team.modal.cadastrar.php'; ?>
-    <?php require_once './../components/team.modal.deletar.php'; ?>
+    <?php require_once './modals/team/team.cadastrar.modal.php'; ?>
+    <?php require_once './modals/team/team.editar.modal.php'; ?>
+    <?php require_once './modals/team//team.deletar.modal.php'; ?>
