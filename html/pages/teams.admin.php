@@ -34,7 +34,8 @@ require_once './../controller/team.controller.php';
                             <th>Nome</th>
                             <th>Sigla</th>
                             <th>Escudo</th>
-                            <th>Editar</th>
+                            <th>Criado/Atualizado</th>
+                            <th>Ações</th>
                         </thead>
                         <tbody>
                             <?php
@@ -49,6 +50,14 @@ require_once './../controller/team.controller.php';
                                     <td><?= $team->getSigla() ?></td>
                                     <td>
                                         <img src="<?= $team->getEscudo() ?>" width="25" />
+                                    </td>
+                                    <td>
+                                        <div>
+                                            C: <?= $team->getCreatedAt() ?>
+                                        </div>
+                                        <div>
+                                            A: <?= $team->getUpdatedAt() ?>
+                                        </div>
                                     </td>
                                     <td width="280">
                                         <a href="#" class="btn btn-info btn-icon-split btn-sm mr-2" value="<?= $team->getId() ?>" data-toggle="modal" data-target="#selecaoModalEditar">

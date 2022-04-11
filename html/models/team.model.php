@@ -5,6 +5,8 @@ class Team
     private $nome;
     private $sigla;
     private $escudo;
+    private $created_at;
+    private $updated_at;
 
     public function toJson()
     {
@@ -55,5 +57,25 @@ class Team
     public function setEscudo($escudo)
     {
         $this->escudo = $escudo;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
     }
 }
