@@ -57,7 +57,7 @@ require_once './../controller/team.controller.php';
                                             </span>
                                             <span class="text">Editar</span>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-icon-split btn-sm" value="<?= $team->getId() ?>" data-toggle="modal" data-target="#timeModalDeletar">
+                                        <a href="#" class="btn btn-danger btn-icon-split btn-sm" value="<?= $team->getId() ?>#<?= $team->getNome() ?>" data-toggle="modal" data-target="#selecaoModalDeletar">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>

@@ -14,6 +14,9 @@ $gateway = [
     "login" => function () {
         return login();
     },
+    "getUsuario" => function () {
+        return getUsuario();
+    },
     "cadastrarUsuario" => function () {
         return cadastrarUsuario();
     },
@@ -61,6 +64,13 @@ function login()
     exit();
 }
 
+function getUsuario()
+{
+    global $teamController;
+    $team = $teamController->getOne($_GET['id']);
+    print_r($team);
+}
+
 function cadastrarUsuario()
 {
     global $usuarioController;
@@ -80,7 +90,7 @@ function getTeam()
 {
     global $teamController;
     $team = $teamController->getOne($_GET['id']);
-    print_r($team);
+    return $team;
 }
 
 function cadastrarTeam()

@@ -1,4 +1,4 @@
-<div class="modal fade" id="timeModalDeletar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="selecaoModalDeletar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -19,14 +19,12 @@
 
 <script>
     $(document).ready(function() {
-        $('#timeModalDeletar').on('show.bs.modal', function(event) {
+        $('#selecaoModalDeletar').on('show.bs.modal', async function(event) {
             var button = $(event.relatedTarget)
-            var id = button.attr('value')
+            var [id, nome] = button.attr('value').split('#')
             var modal = $(this)
-            modal.find('.modal-body').text("Você realmente deseja deletar? #" + id)
-            modal.find('#btnDeletar').attr('href', './../gateway.php?operation=deletarTeam&id=' + id)
-     
-
+            modal.find('.modal-body').text(`Você deseja excluir a seleção ${nome} (#${id})?`)
+            // modal.find('#btnDeletar').attr('href', './../gateway.php?operation=deletarTeam&id=' + id)
         })
     })
 </script>
