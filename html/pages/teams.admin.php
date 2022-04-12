@@ -53,10 +53,10 @@ require_once './../controller/team.controller.php';
                                     </td>
                                     <td>
                                         <div>
-                                            C: <?= $team->getCreatedAt() ?>
+                                            <?= $team->getCreatedAt() ?>
                                         </div>
                                         <div>
-                                            A: <?= $team->getUpdatedAt() ?>
+                                            <?= $team->getUpdatedAt() ?>
                                         </div>
                                     </td>
                                     <td width="280">

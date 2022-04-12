@@ -2,6 +2,7 @@
 require_once './../auth.php';
 require_once './../components/header.php';
 require_once './../controller/partida.controller.php';
+require_once './../controller/team.controller.php';
 ?>
 
 <body id="page-top">
@@ -21,7 +22,7 @@ require_once './../controller/partida.controller.php';
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Partidas</h1>
 
-                    <a href="#" class="btn btn-primary btn-icon-split btn-sm float-right mb-3" data-toggle="modal" data-target="#timeModalCadastrar">
+                    <a href="#" class="btn btn-primary btn-icon-split btn-sm float-right mb-3" data-toggle="modal" data-target="#partidaModalCadastrar">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
@@ -32,15 +33,73 @@ require_once './../controller/partida.controller.php';
                         <thead>
                             <th>#</th>
                             <th>Data</th>
-                            <th>Horário</th>
                             <th>Time A</th>
                             <th>Time B</th>
-                            <th>Resultado</th>
+                            <th>Vencedor</th>
+                            <th>Status</th>
                             <th>Criado/Atualizado</th>
                             <th>Ações</th>
                         </thead>
                         <tbody>
-                            <tr>
+                            <?php
+                            $partidaController = new PartidaController();
+                            $partidas = $partidaController->getAll();
+
+
+                            while ($partida = $partidas->fetchObject('Partida')) {
+                                $teamController = new TeamController();
+                                $team_a = $teamController->getOne($partida->getFkTeamAId());
+                                $team_b = $teamController->getOne($partida->getFkTeamBId());
+                                $vencedor = $teamController->getOne($partida->getVencedor());
+                            ?>
+                                <tr>
+                                    <td><?= $partida->getId() ?></td>
+                                    <td><?= $partida->getDataInicio() ?></td>
+                                    <td>
+                                        <img src="<?= $team_a->getEscudo() ?>" width="20">
+                                        <?= $team_a->getNome(); ?>
+                                    </td>
+                                    <td>
+                                        <img src="<?= $team_b->getEscudo() ?>" width="20">
+                                        <?= $team_b->getNome(); ?>
+                                    </td>
+                                    <td>
+                                        <?php if ($vencedor) { ?>
+                                            <img src="<?= $vencedor->getEscudo() ?>" width="20">
+                                            <?= $vencedor->getNome(); ?>
+                                        <?php } else { ?>
+                                            <img src="./../assets/img/loading.svg" width="20">
+                                        <?php } ?>
+
+                                    </td>
+                                    <td>
+                                        <?= $partida->getStatus() ? 'Encerrado' : 'Andamento' ?>
+                                    </td>
+
+                                    <td>
+                                        <div>
+                                            <?= $partida->getCreatedAt() ?>
+                                        </div>
+                                        <div>
+                                            <?= $partida->getUpdatedAt() ?>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-success btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                            <i class="fas fa-check"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-info btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-danger btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            <?php } ?>
+
+                            <!-- <tr>
                                 <td>1</td>
                                 <td>22/11/2022</td>
                                 <td>16:30</td>
@@ -78,44 +137,8 @@ require_once './../controller/partida.controller.php';
                                     </a>
                                    
                                 </td>
-                            </tr>
-                            <!-- <?php
-                                    $teamController = new TeamController();
-                                    $teams = $teamController->getAll();
+                            </tr> -->
 
-                                    while ($team = $teams->fetchObject('Team')) {
-                                    ?> -->
-                            <tr>
-                                <td><?= $team->getId() ?></td>
-                                <td><?= $team->getNome() ?></td>
-                                <td><?= $team->getSigla() ?></td>
-                                <td>
-                                    <img src="<?= $team->getEscudo() ?>" width="25" />
-                                </td>
-                                <td>
-                                    <div>
-                                        C: <?= $team->getCreatedAt() ?>
-                                    </div>
-                                    <div>
-                                        A: <?= $team->getUpdatedAt() ?>
-                                    </div>
-                                </td>
-                                <td width="280">
-                                    <a href="#" class="btn btn-info btn-icon-split btn-sm mr-2" value="<?= $team->getId() ?>" data-toggle="modal" data-target="#selecaoModalEditar">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-edit"></i>
-                                        </span>
-                                        <span class="text">Editar</span>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split btn-sm" value="<?= $team->getId() ?>#<?= $team->getNome() ?>" data-toggle="modal" data-target="#selecaoModalDeletar">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Deletar</span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <!-- <?php } ?> -->
                         </tbody>
                     </table>
                 </div>
@@ -142,6 +165,6 @@ require_once './../controller/partida.controller.php';
     <!-- End of Page Wrapper -->
 
     <?php require_once './../components/footer.php'; ?>
-    <?php require_once './modals/team/team.cadastrar.modal.php'; ?>
-    <?php require_once './modals/team/team.editar.modal.php'; ?>
-    <?php require_once './modals/team//team.deletar.modal.php'; ?>
+    <?php require_once './modals/partida/partida.cadastrar.modal.php'; ?>
+    <?php require_once './modals/partida/partida.editar.modal.php'; ?>
+    <?php require_once './modals/partida/partida.deletar.modal.php'; ?>

@@ -1,12 +1,14 @@
 <?php
-class Team
+class Partida
 {
     private $id;
     private $data_inicio;
-    private $team_a;
-    private $team_b;
-    private $resultado;
+    private $fk_team_a_id;
+    private $fk_team_b_id;
+    private $vencedor;
     private $status;
+    private $created_at;
+    private $updated_at;
 
     public function toJson()
     {
@@ -14,9 +16,9 @@ class Team
         [
             'id' => $this->getId(),
             'data_inicio' => $this->getDataInicio(),
-            'team_a' => $this->getTeamA(),
-            'team_b' => $this->getTeamB(),
-            'resultado' => $this->getResultado(),
+            'fk_team_a_id' => $this->getFkTeamAId(),
+            'fk_team_b_id' => $this->getFkTeamBId(),
+            'vencedor' => $this->getVencedor(),
             'status' => $this->getStatus()
         ]);
     }
@@ -41,34 +43,24 @@ class Team
         $this->data_inicio = $data_inicio;
     }
 
-    public function getTeamA()
+    public function getFkTeamAId()
     {
-        return $this->team_a;
+        return $this->fk_team_a_id;
     }
 
-    public function setTeamA($team_a)
+    public function setFkTeamAId($fk_team_a_id)
     {
-        $this->team_a = $team_a;
+        $this->fk_team_a_id = $fk_team_a_id;
     }
 
-    public function getTeamB()
+    public function getFkTeamBId()
     {
-        return $this->team_b;
+        return $this->fk_team_b_id;
     }
 
-    public function setTeamB($team_b)
+    public function setFkTeamBId($fk_team_b_id)
     {
-        $this->team_b = $team_b;
-    }
-
-    public function getResultado()
-    {
-        return $this->resultado;
-    }
-
-    public function setResultado($resultado)
-    {
-        $this->resultado = $resultado;
+        $this->fk_team_b_id = $fk_team_b_id;
     }
 
     public function getVencedor()
@@ -89,5 +81,25 @@ class Team
     public function setStatus($status)
     {
         $this->status = $status;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
     }
 }

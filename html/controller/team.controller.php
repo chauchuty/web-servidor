@@ -7,7 +7,7 @@ class TeamController
     function getAll()
     {
         global $db;
-        $query = $db->prepare('SELECT * FROM v$team');
+        $query = $db->prepare('SELECT * FROM v$team ORDER BY nome');
         $query->execute();
         return $query;
     }

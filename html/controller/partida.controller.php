@@ -7,7 +7,7 @@ class PartidaController
     function getAll()
     {
         global $db;
-        $query = $db->prepare('SELECT * FROM v$usuario');
+        $query = $db->prepare('SELECT * FROM v$partida');
         $query->execute();
         return $query;
     }
@@ -31,16 +31,15 @@ class PartidaController
         return $query->fetchObject("Usuario");
     }
 
-    function insert($usuario)
+    function insert($partida)
     {
         global $db;
-        $query = $db->prepare('INSERT INTO usuario (nome, email, senha, creditos) VALUES (:nome, :email, :senha, :creditos)');
-        $query->bindValue(':nome', $usuario->getNome());
-        $query->bindValue(':email', $usuario->getEmail());
-        $query->bindValue(':senha', $usuario->getSenha());
-        $query->bindValue(':creditos', $usuario->getCreditos() ?? 0);
+        $query = $db->prepare('INSERT INTO partida (data_inicio, fk_team_a_id, fk_team_b_id) VALUES (:data_inicio, :fk_team_a_id, :fk_team_b_id)');
+        $query->bindValue(':data_inicio', $partida->getDataInicio());
+        $query->bindValue(':fk_team_a_id', $partida->getFkTeamAId());
+        $query->bindValue(':fk_team_b_id', $partida->getFkTeamBId());
         $query->execute();
-        return $query->fetchObject("Usuario");
+        return $query->fetchObject("Partida");
     }
 
     function update($usuario)

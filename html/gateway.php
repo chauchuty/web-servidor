@@ -4,10 +4,12 @@ session_start();
 require_once './utilities/validate.utility.php';
 require_once './controller/usuario.controller.php';
 require_once './controller/team.controller.php';
+require_once './controller/partida.controller.php';
 
 // Controllers
 $usuarioController = new UsuarioController();
 $teamController = new TeamController();
+$partidaController = new PartidaController();
 
 // Module
 $gateway = [
@@ -37,6 +39,9 @@ $gateway = [
     },
     "deletarTeam" => function () {
         return deletarTeam();
+    },
+    "cadastrarPartida" => function () {
+        return cadastrarPartida();
     },
 ];
 
@@ -164,4 +169,20 @@ function deletarTeam()
     $team = $teamController->delete($_GET['id']);
     header('Location: ./pages/teams.admin.php');
     exit();
+}
+
+function cadastrarPartida()
+{
+    global $partidaController;
+    if (isDate($_POST['data_inicio']) && isId($_POST['fk_team_a_id']) && isId($_POST['fk_team_b_id']) && isDiffTeams($_POST['fk_team_a_id'], $_POST['fk_team_b_id'])) {
+        $partida = new Partida();
+        $partida->setDataInicio($_POST['data_inicio']);
+        $partida->setFkTeamAId($_POST['fk_team_a_id']);
+        $partida->setFkTeamBId($_POST['fk_team_b_id']);
+        $partida = $partidaController->insert($partida);
+        header('Location: ./pages/partidas.admin.php');
+        exit();
+    }
+    header('Location: ./pages/partidas.admin.php');
+
 }
