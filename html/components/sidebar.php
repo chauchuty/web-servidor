@@ -105,4 +105,4 @@
     </li>
 </ul>
 
-<?php require_once './../components/logout.modal.php' ?>
+<?php require_once './modals/logout.modal.php' ?>

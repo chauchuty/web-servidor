@@ -16,6 +16,3 @@
         </div>
     </div>
 </div>
-
-<!-- Diretivas -->
-<!--  data-toggle="modal" data-target="#logoutModal"-->

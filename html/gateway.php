@@ -14,9 +14,9 @@ $partidaController = new PartidaController();
 
 // Module
 $gateway = [
-    // "loginPage" => function () {
-    //     return loginPage();
-    // },
+    "teste" => function () {
+        return teste();
+    },
     "login" => function () {
         return login();
     },
@@ -73,6 +73,10 @@ try {
 
 
 // Functions
+
+function teste(){
+    echo "teste";
+}
 
 function login()
 {
