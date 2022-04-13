@@ -21,10 +21,10 @@
     $(document).ready(function() {
         $('#selecaoModalDeletar').on('show.bs.modal', async function(event) {
             var button = $(event.relatedTarget)
-            var [id, nome] = button.attr('value').split('#')
+            var [id, team_a, team_b] = button.attr('value').split('#')
             var modal = $(this)
-            modal.find('.modal-body').text(`Você deseja excluir a seleção ${nome} (#${id})?`)
-            modal.find('#btnDeletar').attr('href', './../gateway.php?operation=deletarTeam&id=' + id)
+            modal.find('.modal-body').text(`Você deseja excluir a partida ${team_a} x ${team_b} (#${id})?`)
+            modal.find('#btnDeletar').attr('href', './../gateway.php?operation=deletarPartida&id=' + id)
         })
     })
 </script>

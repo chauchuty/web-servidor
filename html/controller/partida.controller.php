@@ -15,20 +15,10 @@ class PartidaController
     function getOne($id)
     {
         global $db;
-        $query = $db->prepare('SELECT * FROM usuario WHERE id = :id');
+        $query = $db->prepare('SELECT * FROM partida WHERE id = :id');
         $query->bindValue(':id', $id);
         $query->execute();
-        return $query->fetchObject('Usuario');
-    }
-
-    function findOne($email, $senha)
-    {
-        global $db;
-        $query = $db->prepare('SELECT * FROM usuario WHERE email = :email AND senha = :senha');
-        $query->bindValue(':email', $email);
-        $query->bindValue(':senha', $senha);
-        $query->execute();
-        return $query->fetchObject("Usuario");
+        return $query->fetchObject('Partida');
     }
 
     function insert($partida)
@@ -61,10 +51,9 @@ class PartidaController
 
     function delete($id){
         global $db;
-        $query = $db->prepare('DELETE FROM usuario WHERE id = :id');
+        $query = $db->prepare('DELETE FROM partida WHERE id = :id');
         $query->bindValue(':id', $id);
-        $query->execute();
-        return $query->fetchObject("Usuario");
+        return $query->execute();
     }
 
     function getCount()

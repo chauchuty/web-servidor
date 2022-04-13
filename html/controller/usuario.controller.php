@@ -64,8 +64,7 @@ class UsuarioController
         global $db;
         $query = $db->prepare('DELETE FROM usuario WHERE id = :id');
         $query->bindValue(':id', $id);
-        $query->execute();
-        return $query->fetchObject("Usuario");
+        return $query->execute();
     }
 
     function getCount()

@@ -1,6 +1,6 @@
 <?php
     session_start();
     if(!isset($_SESSION['id'])){
-        header('Location: login.php');
+        header('Location: http://localhost/pages/login.php');
         die();
 }

@@ -3,6 +3,9 @@ class Partida
 {
     private $id;
     private $data_inicio;
+    private $perc_team_a;
+    private $perc_team_b;
+    private $perc_empate;
     private $fk_team_a_id;
     private $fk_team_b_id;
     private $vencedor;
@@ -41,6 +44,36 @@ class Partida
     public function setDataInicio($data_inicio)
     {
         $this->data_inicio = $data_inicio;
+    }
+
+    public function getPercTeamA()
+    {
+        return $this->perc_team_a;
+    }
+
+    public function setPercTeamA($perc_team_a)
+    {
+        $this->perc_team_a = $perc_team_a;
+    }
+
+    public function getPercTeamB()
+    {
+        return $this->perc_team_b;
+    }
+
+    public function setPercTeamB($perc_team_b)
+    {
+        $this->perc_team_b = $perc_team_b;
+    }
+
+    public function getPercEmpate()
+    {
+        return $this->perc_empate;
+    }
+
+    public function setPercEmpate($perc_empate)
+    {
+        $this->perc_empate = $perc_empate;
     }
 
     public function getFkTeamAId()

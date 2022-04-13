@@ -33,8 +33,11 @@ require_once './../controller/team.controller.php';
                         <thead>
                             <th>#</th>
                             <th>Data</th>
-                            <th>Time A</th>
-                            <th>Time B</th>
+                            <th>Equipe A</th>
+                            <th>Equipe B</th>
+                            <th>Perc. A</th>
+                            <th>Perc. Empate</th>
+                            <th>Perc. B</th>
                             <th>Vencedor</th>
                             <th>Status</th>
                             <th>Criado/Atualizado</th>
@@ -64,6 +67,15 @@ require_once './../controller/team.controller.php';
                                         <?= $team_b->getNome(); ?>
                                     </td>
                                     <td>
+                                        <?= $partida->getPercTeamA(); ?>
+                                    </td>
+                                    <td>
+                                        <?= $partida->getPercEmpate(); ?>
+                                    </td>
+                                    <td>
+                                        <?= $partida->getPercTeamB(); ?>
+                                    </td>
+                                    <td>
                                         <?php if ($vencedor) { ?>
                                             <img src="<?= $vencedor->getEscudo() ?>" width="20">
                                             <?= $vencedor->getNome(); ?>
@@ -85,13 +97,13 @@ require_once './../controller/team.controller.php';
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-success btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                        <a title="Encerrar" href="#" class="btn btn-success btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
                                             <i class="fas fa-check"></i>
                                         </a>
-                                        <a href="#" class="btn btn-info btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                        <a title="Editar" href="#" class="btn btn-info btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-sm mr-2" value="" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                        <a title="Deletar" href="#" class="btn btn-danger btn-sm mr-2" value="<?= $partida->getId() ?>#<?= $team_a->getNome() ?>#<?= $team_b->getNome() ?>" data-toggle="modal" data-target="#selecaoModalDeletar">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

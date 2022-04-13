@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
     header("Location: ./dashboard.php");
 }
 
 require_once './../components/header.php';
-
 ?>
 
 <body class="bg-gradient-dark">

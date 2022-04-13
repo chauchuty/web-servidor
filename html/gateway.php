@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require_once './utilities/functions.utility.php';
 require_once './utilities/validate.utility.php';
 require_once './controller/usuario.controller.php';
 require_once './controller/team.controller.php';
@@ -13,8 +14,14 @@ $partidaController = new PartidaController();
 
 // Module
 $gateway = [
+    // "loginPage" => function () {
+    //     return loginPage();
+    // },
     "login" => function () {
         return login();
+    },
+    "logout" => function () {
+        return logout();
     },
     "getUsuario" => function () {
         return getUsuario();
@@ -43,6 +50,9 @@ $gateway = [
     "cadastrarPartida" => function () {
         return cadastrarPartida();
     },
+    "deletarPartida" => function () {
+        return deletarPartida();
+    },
 ];
 
 $operation = isset($_POST['operation']) ? $_POST['operation'] : $_GET['operation'];
@@ -54,6 +64,13 @@ try {
     die();
 }
 
+// Routes
+// function loginPage()
+// {
+//     isProtected();
+//     header('Location: ./../pages/usuarios.admin.php');
+// }
+
 
 // Functions
 
@@ -63,7 +80,7 @@ function login()
     $usuario = $usuarioController->findOne($_POST['email'], md5($_POST['senha']));
 
     if (!$usuario) {
-        header('Location: ./pages/login.php?error=1');
+        nextPage('./pages/login.php', 'error', '1');
         die();
     }
 
@@ -71,7 +88,14 @@ function login()
     $_SESSION['nome'] = $usuario->getNome();
     $_SESSION['email'] = $usuario->getEmail();
     $_SESSION['is_admin'] = $usuario->getIsAdmin();
-    header('Location: ./pages/dashboard.php');
+    nextPage('./pages/dashboard.php', 'success', '1');
+    exit();
+}
+
+function logout()
+{
+    session_destroy();
+    nextPage('./pages/login.php', 'success', '2');
     exit();
 }
 
@@ -87,6 +111,7 @@ function cadastrarUsuario()
     isset($_SESSION['is_admin']) ? $is_admin = $_SESSION['is_admin'] : $is_admin = 0;
 
     global $usuarioController;
+    // Melhorias: validate(['isFullName', 'isEmail', 'isPassword', 'isConfirmPassword']);
     if (isFullName($_POST['nome']) && isEmail($_POST['email']) && isPasswordValid($_POST['senha']) && $_POST['senha'] == $_POST['senha_repetida']) {
         $usuario = new Usuario();
         $usuario->setNome($_POST['nome']);
@@ -94,10 +119,10 @@ function cadastrarUsuario()
         $usuario->setSenha(md5($_POST['senha']));
         $is_admin == 1 ? $usuario->setCreditos($_POST['creditos']) : null;
         $usuario = $usuarioController->insert($usuario);
-        header('Location: ./pages/usuarios.admin.php');
+        $is_admin ? nextPage('./pages/usuarios.admin.php', 'success', '3') : nextPage('./pages/login.php', 'success', '3');
         exit();
     }
-    header('Location: ./pages/cadastrar.php?error=2');
+    $is_admin ? nextPage('./pages/usuarios.admin.php', 'error', '3') : nextPage('./pages/cadastrar.php', 'error', '3');
 }
 
 function atualizarUsuario()
@@ -112,18 +137,22 @@ function atualizarUsuario()
         $usuario->setCreditos($_POST['creditos']);
         $usuario->setIsAdmin($_POST['is_admin']);
         $usuario = $usuarioController->update($usuario);
-        // header('Location: ./pages/usuarios.admin.php');
+        nextPage('./pages/usuarios.admin.php', 'success', '4');
         exit();
     }
-    // header('Location: ./pages/cadastrar.php?error=2');
+    nextPage('./pages/usuarios.admin.php', 'error', '4');
 }
 
 function deletarUsuario()
 {
     global $usuarioController;
-    $team = $usuarioController->delete($_GET['id']);
-    header('Location: ./pages/usuarios.admin.php');
-    exit();
+    $delete = $usuarioController->delete($_GET['id']);
+
+    if ($delete) {
+        nextPage('./pages/usuarios.admin.php', 'success', '5');
+        exit();
+    }
+    nextPage('./pages/usuarios.admin.php', 'error', '5');
 }
 
 
@@ -143,9 +172,10 @@ function cadastrarTeam()
         $team->setSigla($_POST['sigla']);
         $team->setEscudo($_POST['escudo']);
         $team = $teamController->insert($team);
-        header('Location: ./pages/teams.admin.php');
+        nextPage('./pages/teams.admin.php', 'success', '3');
         exit();
     }
+    nextPage('./pages/teams.admin.php', 'error', '3');
 }
 
 function atualizarTeam()
@@ -158,17 +188,22 @@ function atualizarTeam()
         $team->setSigla($_POST['sigla']);
         $team->setEscudo($_POST['escudo']);
         $team = $teamController->update($team);
-        header('Location: ./pages/teams.admin.php');
+        nextPage('./pages/teams.admin.php', 'success', '4');
         exit();
     }
+    nextPage('./pages/teams.admin.php', 'error', '4');
 }
 
 function deletarTeam()
 {
     global $teamController;
-    $team = $teamController->delete($_GET['id']);
-    header('Location: ./pages/teams.admin.php');
-    exit();
+    $delete = $teamController->delete($_GET['id']);
+
+    if ($delete) {
+        nextPage('./pages/teams.admin.php', 'success', '5');
+        exit();
+    }
+    nextPage('./pages/teams.admin.php', 'error', '5');
 }
 
 function cadastrarPartida()
@@ -180,9 +215,36 @@ function cadastrarPartida()
         $partida->setFkTeamAId($_POST['fk_team_a_id']);
         $partida->setFkTeamBId($_POST['fk_team_b_id']);
         $partida = $partidaController->insert($partida);
-        header('Location: ./pages/partidas.admin.php');
+        nextPage('./pages/partidas.admin.php', 'success', '3');
         exit();
     }
-    header('Location: ./pages/partidas.admin.php');
+    nextPage('./pages/partidas.admin.php', 'error', '3');
+}
 
+function atualizarPartida()
+{
+    global $partidaController;
+    if (isDate($_POST['data_inicio']) && isId($_POST['fk_team_a_id']) && isId($_POST['fk_team_b_id']) && isDiffTeams($_POST['fk_team_a_id'], $_POST['fk_team_b_id'])) {
+        $partida = new Partida();
+        $partida->setId($_POST['id']);
+        $partida->setDataInicio($_POST['data_inicio']);
+        $partida->setFkTeamAId($_POST['fk_team_a_id']);
+        $partida->setFkTeamBId($_POST['fk_team_b_id']);
+        $partida = $partidaController->update($partida);
+        nextPage('./pages/partidas.admin.php', 'success', '4');
+        exit();
+    }
+    nextPage('./pages/partidas.admin.php', 'error', '4');
+}
+
+function deletarPartida()
+{
+    global $partidaController;
+    $delete = $partidaController->delete($_GET['id']);
+
+    if ($delete) {
+        nextPage('./pages/partidas.admin.php', 'success', '5');
+        exit();
+    }
+    nextPage('./pages/partidas.admin.php', 'error', '5');
 }

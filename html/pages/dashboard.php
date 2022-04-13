@@ -3,9 +3,9 @@ require_once './../auth.php';
 require_once './../components/header.php';
 require_once './../controller/usuario.controller.php';
 require_once './../controller/team.controller.php';
+
 $usuarioController = new UsuarioController();
 $teamController = new TeamController();
-
 $usuario = $usuarioController->getOne($_SESSION['id']);
 
 ?>
