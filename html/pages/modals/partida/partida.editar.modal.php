@@ -25,19 +25,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                            <label for="sigla" class="col-sm-2 col-form-label col-form-label-sm">Escudo</label>
-
-                            <div class="col-sm-10">
-                                <div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-sm">
-                                            <img id="imgEscudo" src="#" width=20/>
-                                        </span>
-                                    </div>
-                                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="escudo" name="escudo" autocomplete="off">
+                        <label for="sigla" class="col-sm-2 col-form-label col-form-label-sm">Escudo</label>
+                        <div class="col-sm-10">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">
+                                        <img id="imgEscudo" src="#" width=20 />
+                                    </span>
                                 </div>
+                                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="escudo" name="escudo" autocomplete="off">
                             </div>
                         </div>
+                    </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancelar</button>
                         <button class="btn btn-info btn-sm">Atualizar</button>

@@ -138,8 +138,8 @@ function atualizarUsuario()
         $usuario->setNome($_POST['nome']);
         $usuario->setEmail($_POST['email']);
         !isEmpty($_POST['senha']) ? $usuario->setSenha(md5($_POST['senha'])) : null;
-        $usuario->setSaldo($_POST['saldo']);
-        $usuario->setIsAdmin($_POST['is_admin']);
+        !isEmpty($_POST['saldo']) ? $usuario->setSaldo($_POST['saldo']) : null;
+        !isEmpty($_POST['is_admin']) ? $usuario->setIsAdmin($_POST['is_admin']) : null;
         $usuario = $usuarioController->update($usuario);
         nextPage('./pages/usuarios.admin.php', 'success', '4');
         exit();

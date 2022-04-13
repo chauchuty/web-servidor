@@ -93,7 +93,7 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="./profile.php">
             <i class="fas fa-user"></i>
             <span>Perfil</span></a>
     </li>
