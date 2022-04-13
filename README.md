@@ -6,7 +6,7 @@
 - Pablo Santos
 
 #### Objetivo
-Desenvolvenvolver um website de apostas esportivas.
+Desenvolver um website de apostas esportivas.
 
 #### Parte I
 - :white_check_mark: Uso de formulários e dados ao servidor
@@ -38,7 +38,7 @@ cd web-servidor
 docker compose up
 ~~~
 
-#### Apêndices
+#### Dependências
 
 - SB Admin 2 - https://startbootstrap.com/theme/sb-admin-2/
 - Boostrap v5.0 - https://getbootstrap.com/docs/5.0/
