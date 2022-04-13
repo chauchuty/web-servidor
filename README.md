@@ -8,9 +8,6 @@
 #### Objetivo
 Desenvolvenvolver um website de apostas esportivas.
 
-#### Conteúdo
-O projeto tem como 
-
 #### Parte I
 - :white_check_mark: Uso de formulários e dados ao servidor
 - :white_check_mark: Validações de formulários
