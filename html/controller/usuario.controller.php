@@ -15,7 +15,7 @@ class UsuarioController
     function getOne($id)
     {
         global $db;
-        $query = $db->prepare('SELECT * FROM usuario WHERE id = :id');
+        $query = $db->prepare('SELECT * FROM v$usuario WHERE id = :id');
         $query->bindValue(':id', $id);
         $query->execute();
         return $query->fetchObject('Usuario');
@@ -34,11 +34,11 @@ class UsuarioController
     function insert($usuario)
     {
         global $db;
-        $query = $db->prepare('INSERT INTO usuario (nome, email, senha, creditos) VALUES (:nome, :email, :senha, :creditos)');
+        $query = $db->prepare('INSERT INTO usuario (nome, email, senha, saldo) VALUES (:nome, :email, :senha, :saldo)');
         $query->bindValue(':nome', $usuario->getNome());
         $query->bindValue(':email', $usuario->getEmail());
         $query->bindValue(':senha', $usuario->getSenha());
-        $query->bindValue(':creditos', $usuario->getCreditos() ?? 0);
+        $query->bindValue(':saldo', $usuario->getSaldo() ?? 0);
         $query->execute();
         return $query->fetchObject("Usuario");
     }
@@ -47,12 +47,12 @@ class UsuarioController
     {
         global $db;
         $senha = !isEmpty($usuario->getSenha()) ? 'senha = :senha,' : '';
-        $query = $db->prepare("UPDATE usuario SET nome = :nome, $senha creditos = :creditos ,email = :email, is_admin = :is_admin WHERE id = :id");
+        $query = $db->prepare("UPDATE usuario SET nome = :nome, $senha saldo = :saldo ,email = :email, is_admin = :is_admin WHERE id = :id");
         $query->bindValue(':id', $usuario->getId());
         $query->bindValue(':nome', $usuario->getNome());
         $query->bindValue(':email', $usuario->getEmail());
         !isEmpty($usuario->getSenha()) ? $query->bindValue(':senha', $usuario->getSenha()) : null;
-        $query->bindValue(':creditos', $usuario->getCreditos());
+        $query->bindValue(':saldo', $usuario->getsaldo());
         $query->bindValue(':is_admin', $usuario->getIsAdmin());
         $query->execute();
         header('Location: ./pages/usuarios.admin.php');

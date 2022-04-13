@@ -20,6 +20,11 @@ function isInteger($value)
     return is_numeric($value) && is_int($value + 0);
 }
 
+function isNumber ($value)
+{
+    return is_numeric($value);
+}
+
 function isFullName($fullName)
 {
     if (strlen($fullName) < 3) {

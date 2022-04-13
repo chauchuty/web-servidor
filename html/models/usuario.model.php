@@ -5,7 +5,7 @@ class Usuario {
     private $nome;
     private $email;
     private $senha;
-    private $creditos;
+    private $saldo;
     private $is_admin;
     private $created_at;
     private $updated_at;
@@ -18,8 +18,8 @@ class Usuario {
             'nome' => $this->getNome(),
             'email' => $this->getEmail(),
             'senha' => $this->getSenha(),
-            'creditos' => $this->getCreditos(),
-            'is_admin' => $this->getIsAdmin(),
+            'saldo' => $this->getSaldo(),
+            'is_admin' => $this->getIsAdmin()
         ]);
     }
 
@@ -55,13 +55,14 @@ class Usuario {
         $this->senha = $senha;
     }
 
-    public function getCreditos() {
-        return $this->creditos;
+    public function getSaldo() {
+        return $this->saldo;
     }
 
-    public function setCreditos($creditos) {
-        $this->creditos = $creditos;
+    public function setSaldo($saldo) {
+        $this->saldo = $saldo;
     }
+
 
     public function getIsAdmin() {
         return $this->is_admin;

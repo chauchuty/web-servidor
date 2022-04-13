@@ -117,7 +117,7 @@ function cadastrarUsuario()
         $usuario->setNome($_POST['nome']);
         $usuario->setEmail($_POST['email']);
         $usuario->setSenha(md5($_POST['senha']));
-        $is_admin == 1 ? $usuario->setCreditos($_POST['creditos']) : null;
+        $is_admin == 1 ? $usuario->setSaldo($_POST['saldo']) : null;
         $usuario = $usuarioController->insert($usuario);
         $is_admin ? nextPage('./pages/usuarios.admin.php', 'success', '3') : nextPage('./pages/login.php', 'success', '3');
         exit();
@@ -128,13 +128,13 @@ function cadastrarUsuario()
 function atualizarUsuario()
 {
     global $usuarioController;
-    if (isFullName($_POST['nome']) && isEmail($_POST['email']) && isset($_POST['is_admin']) && isInteger($_POST['creditos'])) {
+    if (isFullName($_POST['nome']) && isEmail($_POST['email']) && isset($_POST['is_admin']) && isNumber($_POST['saldo'])) {
         $usuario = new Usuario();
         $usuario->setId($_POST['id']);
         $usuario->setNome($_POST['nome']);
         $usuario->setEmail($_POST['email']);
         !isEmpty($_POST['senha']) ? $usuario->setSenha(md5($_POST['senha'])) : null;
-        $usuario->setCreditos($_POST['creditos']);
+        $usuario->setSaldo($_POST['saldo']);
         $usuario->setIsAdmin($_POST['is_admin']);
         $usuario = $usuarioController->update($usuario);
         nextPage('./pages/usuarios.admin.php', 'success', '4');

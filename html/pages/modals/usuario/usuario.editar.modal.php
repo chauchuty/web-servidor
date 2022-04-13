@@ -1,4 +1,4 @@
-<div class="modal fade" id="selecaoModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -41,9 +41,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="creditos" class="col-sm-2 col-form-label col-form-label-sm">Créditos</label>
+                        <label for="creditos" class="col-sm-2 col-form-label col-form-label-sm">Saldo</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control form-control-sm" id="creditos" name="creditos" autocomplete="off">
+                            <input type="number" class="form-control form-control-sm" id="saldo" name="saldo" autocomplete="off">
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@
             $('#senha').val(randomPassword(8));
         });
 
-        $('#selecaoModalEditar').on('show.bs.modal', async function(event) {
+        $('#editarModal').on('show.bs.modal', async function(event) {
             var modal = $(this)
             var button = $(event.relatedTarget)
             var id = button.attr('value')
@@ -95,7 +95,8 @@
                     modal.find('#id').val(data.id)
                     modal.find('#nome').val(data.nome)
                     modal.find('#email').val(data.email)
-                    modal.find('#creditos').val(data.creditos)
+                    modal.find('#senha').val('')
+                    modal.find('#saldo').val(data.saldo)
                     modal.find('#is_admin').val(data.is_admin)
                 })
         })

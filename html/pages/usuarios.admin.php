@@ -33,7 +33,7 @@ require_once './../controller/usuario.controller.php';
                             <th>#</th>
                             <th>Nome</th>
                             <th>Email</th>
-                            <th>Créditos</th>
+                            <th>Saldo</th>
                             <th>Administrador</th>
                             <th>Criado/Atualizado</th>
                             <th>Ações</th>
@@ -49,7 +49,7 @@ require_once './../controller/usuario.controller.php';
                                     <td><?= $usuario->getId() ?></td>
                                     <td><?= $usuario->getNome() ?></td>
                                     <td><?= $usuario->getEmail() ?></td>
-                                    <td><?= $usuario->getCreditos() ?></td>
+                                    <td><?= $usuario->getSaldo() ?></td>
                                     <td><?= $usuario->getIsAdmin() ? 'Sim' : 'Não' ?></td>
                                     <td>
                                         <div>
@@ -61,13 +61,13 @@ require_once './../controller/usuario.controller.php';
                                     </td>
 
                                     <td width="280">
-                                        <a href="#" class="btn btn-info btn-icon-split btn-sm mr-2" value="<?= $usuario->getId() ?>" data-toggle="modal" data-target="#selecaoModalEditar">
+                                        <a href="#" class="btn btn-info btn-icon-split btn-sm mr-2" value="<?= $usuario->getId() ?>" data-toggle="modal" data-target="#editarModal">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-edit"></i>
                                             </span>
                                             <span class="text">Editar</span>
                                         </a>
-                                        <a href="#" class="btn btn-danger btn-icon-split btn-sm" value="<?= $usuario->getId() ?>#<?= $usuario->getNome() ?>" data-toggle="modal" data-target="#selecaoModalDeletar">
+                                        <a href="#" class="btn btn-danger btn-icon-split btn-sm" value="<?= $usuario->getId() ?>#<?= $usuario->getNome() ?>" data-toggle="modal" data-target="#deletarModal">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>

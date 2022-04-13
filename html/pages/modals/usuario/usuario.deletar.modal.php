@@ -1,9 +1,4 @@
-<?php 
-    require_once './../../../auth.php';
-?>
-
-
-<div class="modal fade" id="selecaoModalDeletar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deletarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -24,7 +19,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#selecaoModalDeletar').on('show.bs.modal', async function(event) {
+        $('#deletarModal').on('show.bs.modal', async function(event) {
             var button = $(event.relatedTarget)
             var [id, nome] = button.attr('value').split('#')
             var modal = $(this)

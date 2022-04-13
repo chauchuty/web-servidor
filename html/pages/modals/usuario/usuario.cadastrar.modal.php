@@ -33,9 +33,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="escudo" class="col-sm-2 col-form-label col-form-label-sm">Créditos</label>
+                        <label for="escudo" class="col-sm-2 col-form-label col-form-label-sm">Saldo</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control form-control-sm" name="creditos" autocomplete="off">
+                            <input type="number" class="form-control form-control-sm" name="saldo" autocomplete="off">
                         </div>
                     </div>
                     <div class="modal-footer">
