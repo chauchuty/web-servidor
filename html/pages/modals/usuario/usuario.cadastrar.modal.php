@@ -1,3 +1,7 @@
+<?php
+    require_once dirname(__FILE__) . './../../../auth.php';
+?>
+
 <div class="modal fade" id="timeModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
