@@ -18,12 +18,24 @@ Desenvolver um website de apostas esportivas.
 
 #### Cronograma
 
-| DATA       |             Descrição            |
-|------------|----------------------------------|
-| 06/04/2022 | Início do projeto                |
-| 06/04/2022 | Definição da temática            |
-| 06/04/2022 | Inicio do desenvolvimento        |
-| 13/04/2022 | Primeira parte finalizada        |
+| DATA       |             Descrição                  |
+|------------|----------------------------------------|
+| 06/04/2022 | Início do projeto                      |
+| 06/04/2022 | Definição da temática                  |
+| 06/04/2022 | Inicio do desenvolvimento              |
+| 07/04/2022 | Desenvolvimento da interface           |
+| 08/04/2022 | Desenvolvimento do sistema de login    |
+| 08/04/2022 | Desenvolvimento da autenticação        |
+| 08/04/2022 | Desenvolvimento do dashboard           |
+| 08/04/2022 | Desenvolvimento da tabela de seleções  |
+| 08/04/2022 | Desenvolvimento do calendário dos jogos|
+| 09/04/2022 | Desenvolvimento dos modais             |
+| 09/04/2022 | Cadastro das seleções                  |
+| 10/04/2022 | Atualizações no dashboard              |
+| 12/04/2022 | Atualizações tabela de partidas        |
+| 13/04/2022 | Atualizações nos modais                |
+| 13/04/2022 | Desenvolvimento das paginações         |
+| 13/04/2022 | Primeira parte finalizada              |
 
 #### Requisitos
 
