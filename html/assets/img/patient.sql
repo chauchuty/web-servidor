@@ -1,0 +1,10 @@
+insert into patient (id, name, birth_date, email, fk_address) values (1, 'Sarina Pleavin', '6/17/2021', 'spleavin0@tumblr.com', 1);
+insert into patient (id, name, birth_date, email, fk_address) values (2, 'Caty Laity', '4/11/2022', 'claity1@gnu.org', 2);
+insert into patient (id, name, birth_date, email, fk_address) values (3, 'Claire Dovydenas', '8/4/2021', 'cdovydenas2@cmu.edu', 3);
+insert into patient (id, name, birth_date, email, fk_address) values (4, 'Janna Silbermann', '2/20/2022', 'jsilbermann3@cnet.com', 4);
+insert into patient (id, name, birth_date, email, fk_address) values (5, 'Joyann Crossingham', '5/12/2021', 'jcrossingham4@businessweek.com', 5);
+insert into patient (id, name, birth_date, email, fk_address) values (6, 'Delila Ausiello', '4/18/2021', 'dausiello5@domainmarket.com', 6);
+insert into patient (id, name, birth_date, email, fk_address) values (7, 'Wood Boulter', '3/3/2022', 'wboulter6@fastcompany.com', 7);
+insert into patient (id, name, birth_date, email, fk_address) values (8, 'Sophie Elwin', '10/23/2021', 'selwin7@printfriendly.com', 8);
+insert into patient (id, name, birth_date, email, fk_address) values (9, 'Kasper Farrance', '10/19/2021', 'kfarrance8@illinois.edu', 9);
+insert into patient (id, name, birth_date, email, fk_address) values (10, 'Riki Kingsnod', '9/8/2021', 'rkingsnod9@ucla.edu', 10);

@@ -63,6 +63,13 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Perc. E</label>
+                        <div class="col-sm-10">
+                            <input type="number" step="0.01" class="form-control form-control-sm" name="perc_empate" autocomplete="off">
+                        </div>
+                    </div>
+
                     <div class="modal-footer">
                         <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancelar</button>
                         <button class="btn btn-primary btn-sm">Cadastrar</button>

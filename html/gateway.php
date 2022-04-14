@@ -213,11 +213,15 @@ function deletarTeam()
 function cadastrarPartida()
 {
     global $partidaController;
-    if (isDate($_POST['data_inicio']) && isId($_POST['fk_team_a_id']) && isId($_POST['fk_team_b_id']) && isDiffTeams($_POST['fk_team_a_id'], $_POST['fk_team_b_id'])) {
+    if (isDate($_POST['data_inicio']) && isId($_POST['fk_team_a_id']) && isId($_POST['fk_team_b_id']) && isDiffTeams($_POST['fk_team_a_id'], $_POST['fk_team_b_id']) && isDouble($_POST['perc_team_a']) && isDouble($_POST['perc_team_b']) && isDouble($_POST['perc_empate'])) {
         $partida = new Partida();
         $partida->setDataInicio($_POST['data_inicio']);
         $partida->setFkTeamAId($_POST['fk_team_a_id']);
         $partida->setFkTeamBId($_POST['fk_team_b_id']);
+        $partida->setPercTeamA($_POST['perc_team_a']);
+        $partida->setPercTeamB($_POST['perc_team_b']);
+        $partida->setPercEmpate($_POST['perc_empate']);
+        
         $partida = $partidaController->insert($partida);
         nextPage('./pages/partidas.admin.php', 'success', '3');
         exit();

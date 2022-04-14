@@ -1,0 +1,10 @@
+insert into address (id, name, birth_date, email, fk_address) values (1, 'Leoine Kewley', '10/6/2021', 'lkewley0@zimbio.com', 1);
+insert into address (id, name, birth_date, email, fk_address) values (2, 'Taffy McWhin', '5/27/2021', 'tmcwhin1@seesaa.net', 2);
+insert into address (id, name, birth_date, email, fk_address) values (3, 'Vergil Handscomb', '11/17/2021', 'vhandscomb2@boston.com', 3);
+insert into address (id, name, birth_date, email, fk_address) values (4, 'Meredithe Eagleton', '4/9/2022', 'meagleton3@usa.gov', 4);
+insert into address (id, name, birth_date, email, fk_address) values (5, 'Saunder Gaveltone', '9/10/2021', 'sgaveltone4@hao123.com', 5);
+insert into address (id, name, birth_date, email, fk_address) values (6, 'Nariko Kuhwald', '9/3/2021', 'nkuhwald5@quantcast.com', 6);
+insert into address (id, name, birth_date, email, fk_address) values (7, 'Bette Treffry', '12/8/2021', 'btreffry6@shareasale.com', 7);
+insert into address (id, name, birth_date, email, fk_address) values (8, 'Susan Vennart', '5/27/2021', 'svennart7@google.it', 8);
+insert into address (id, name, birth_date, email, fk_address) values (9, 'Coralyn Clearley', '5/30/2021', 'cclearley8@cpanel.net', 9);
+insert into address (id, name, birth_date, email, fk_address) values (10, 'Alexandrina Kohrsen', '10/31/2021', 'akohrsen9@foxnews.com', 10);

@@ -62,4 +62,7 @@ function isDiffTeams($fk_team_a_id, $fk_team_b_id){
     return $fk_team_a_id != $fk_team_b_id;
 }
 
-// create regex to chauchuty@alunos.utfpr.edu.br
+function isDouble($value)
+{
+    return true;
+}

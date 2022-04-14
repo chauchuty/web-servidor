@@ -24,10 +24,13 @@ class PartidaController
     function insert($partida)
     {
         global $db;
-        $query = $db->prepare('INSERT INTO partida (data_inicio, fk_team_a_id, fk_team_b_id) VALUES (:data_inicio, :fk_team_a_id, :fk_team_b_id)');
+        $query = $db->prepare('INSERT INTO partida (data_inicio, fk_team_a_id, fk_team_b_id, perc_team_a, perc_team_b, perc_empate) VALUES (:data_inicio, :fk_team_a_id, :fk_team_b_id, :perc_team_a, :perc_team_b, :perc_empate)');
         $query->bindValue(':data_inicio', $partida->getDataInicio());
         $query->bindValue(':fk_team_a_id', $partida->getFkTeamAId());
         $query->bindValue(':fk_team_b_id', $partida->getFkTeamBId());
+        $query->bindValue(':perc_team_a', $partida->getPercTeamA());
+        $query->bindValue(':perc_team_b', $partida->getPercTeamB());
+        $query->bindValue(':perc_empate', $partida->getPercEmpate());
         $query->execute();
         return $query->fetchObject("Partida");
     }

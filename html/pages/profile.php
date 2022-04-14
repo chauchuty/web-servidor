@@ -32,7 +32,7 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
 
 
                         <!-- Créditos -->
-                        <div class="col-xl-3 col-md-12 mb-4 align-items-center">
+                        <div class="col-xl-12 col-md-12 mb-4 align-items-center">
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
