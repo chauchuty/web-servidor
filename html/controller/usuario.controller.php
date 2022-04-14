@@ -4,10 +4,11 @@ require_once dirname(__FILE__) . './../models/usuario.model.php';
 
 class UsuarioController
 {
-    function getAll()
+    function getAll($page)
     {
         global $db;
-        $query = $db->prepare('SELECT * FROM v$usuario');
+        $query = $db->prepare('SELECT * FROM v$usuario LIMIT 10 OFFSET ' . ($page - 1) * 10);
+        // $query->bindValue(':_page', $page);
         $query->execute();
         return $query;
     }

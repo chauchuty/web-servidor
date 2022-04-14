@@ -41,7 +41,9 @@ require_once './../controller/usuario.controller.php';
                         <tbody>
                             <?php
                             $usuarioController = new UsuarioController();
-                            $usuarios = $usuarioController->getAll();
+                            $page = isset($_GET['page']) ? $_GET['page'] : '1';
+                            $page <= 0 ? $page = 1 : $page;
+                            $usuarios = $usuarioController->getAll($page);
 
                             while ($usuario = $usuarios->fetchObject('Usuario')) {
                             ?>
@@ -78,6 +80,21 @@ require_once './../controller/usuario.controller.php';
                             <?php } ?>
                         </tbody>
                     </table>
+
+                    <nav aria-label="Pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item"><a class="page-link" href="usuarios.admin.php?page=<?= $page - 1 ?>">Anterior</a></li>
+
+                            <?php
+                            echo $page >= 2 ? '<li class="page-item"><a class="page-link" href="usuarios.admin.php?page=1">1...</a></li>' : '';
+                            for ($i = $page; $i <= $page + 3; $i++) {
+                                $active = $page == $i ? "active" : "";
+                                echo '<li class="page-item ' . $active . '"><a class="page-link" href="usuarios.admin.php?page=' . $i . '">' . $i . '</a></li>';
+                            }
+                            ?>
+                            <li class="page-item"><a class="page-link" href="usuarios.admin.php?page=<?= $page + 1 ?>">Próximo</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <!-- End Page Content CODE! -->
 

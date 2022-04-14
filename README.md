@@ -14,6 +14,7 @@ Desenvolver um website de apostas esportivas.
 - :white_check_mark: Tratamento de erros
 - :white_check_mark: Padrão MVC
 - :white_check_mark: Autenticação de usuários
+- :white_check_mark: Interface Adequada
 
 #### Cronograma
 
