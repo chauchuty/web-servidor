@@ -1,19 +1,19 @@
 <?php
-require_once './../auth.php';
-require_once './../components/header.php';
+require_once './auth.php';
+require_once './components/header.php';
 ?>
 
 <body id="page-top">
     <div id="wrapper">
         <!-- Sidebar -->
-        <?php require_once './../components/sidebar.php'; ?>
+        <?php require_once './components/sidebar.php'; ?>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
                 <!-- NavBar -->
-                <?php require_once './../components/navbar.php'; ?>
+                <?php require_once './components/navbar.php'; ?>
                 <!-- NavBar -->
                 <!-- Begin Page Content CODE! -->
                 <div class="container-fluid">
@@ -32,11 +32,11 @@ require_once './../components/header.php';
                                 <td class="align-middle">16:30</td>
                                 <td class="align-middle text-left">
                                     <div>
-                                        <img src="./../assets/img/brazil.logo.png" class="img-fluid" width="25">
+                                        <img src="./assets/img/brazil.logo.png" class="img-fluid" width="25">
                                         Brasil <sup>s1</sup>
                                     </div>
                                     <div class="mt-2">
-                                        <img src="./../assets/img/argentina.logo.png" class="img-fluid" width="25">
+                                        <img src="./assets/img/argentina.logo.png" class="img-fluid" width="25">
                                         Argentina <sup>s2</sup>
                                     </div>
 
@@ -91,4 +91,4 @@ require_once './../components/header.php';
     </div>
     <!-- End of Page Wrapper -->
     
-    <?php require_once './../components/footer.php'; ?>
+    <?php require_once './components/footer.php'; ?>

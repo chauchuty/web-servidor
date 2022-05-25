@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-require_once './../utilities/functions.utility.php';
-require_once './../utilities/validate.utility.php';
-require_once './../controller/usuario.controller.php';
-require_once './../controller/team.controller.php';
-require_once './../controller/partida.controller.php';
+require_once './utilities/functions.utility.php';
+require_once './utilities/validate.utility.php';
+require_once './controller/usuario.controller.php';
+require_once './controller/team.controller.php';
+require_once './controller/partida.controller.php';
 
 // Controllers
 $usuarioController = new UsuarioController();
@@ -92,7 +92,7 @@ function login()
     $_SESSION['nome'] = $usuario->getNome();
     $_SESSION['email'] = $usuario->getEmail();
     $_SESSION['is_admin'] = $usuario->getIsAdmin();
-    nextPage('./pages/dashboard.php', 'success', '1');
+    nextPage('./dashboard', 'success', '1');
     exit();
 }
 

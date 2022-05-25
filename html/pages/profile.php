@@ -1,8 +1,8 @@
 <?php
-require_once './../auth.php';
-require_once './../components/header.php';
-require_once './../controller/usuario.controller.php';
-require_once './../controller/team.controller.php';
+require_once './auth.php';
+require_once './components/header.php';
+require_once './controller/usuario.controller.php';
+require_once './controller/team.controller.php';
 
 $usuarioController = new UsuarioController();
 $teamController = new TeamController();
@@ -13,14 +13,14 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
 <body id="page-top">
     <div id="wrapper">
         <!-- Sidebar -->
-        <?php require_once './../components/sidebar.php'; ?>
+        <?php require_once './components/sidebar.php'; ?>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
                 <!-- NavBar -->
-                <?php require_once './../components/navbar.php'; ?>
+                <?php require_once './components/navbar.php'; ?>
                 <!-- NavBar -->
                 <!-- Begin Page Content CODE! -->
                 <div class="container-fluid">
@@ -46,7 +46,7 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
                                         </div>
                                     </div>
                                     <hr>
-                                    <form action="./../gateway.php" method="post" class="p-3">
+                                    <form action="./gateway.php" method="post" class="p-3">
                                         <input name="operation" value="atualizarUsuario" hidden />
                                         <div class="form-group row">
                                             <label for="nome" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
@@ -76,7 +76,7 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="./dashboard.php" class="btn btn-secondary btn-sm" type="a" >Cancelar</a>
+                                            <a href="./dashboard" class="btn btn-secondary btn-sm" type="a" >Cancelar</a>
                                             <button class="btn btn-primary btn-sm">Atualizar</button>
                                         </div>
                                     </form>
@@ -113,4 +113,4 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
         <i class="fas fa-angle-up"></i>
     </a> -->
 
-    <?php require_once './../components/footer.php'; ?>
+    <?php require_once './components/footer.php'; ?>

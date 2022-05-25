@@ -1,5 +1,5 @@
 <?php
-    require_once dirname(__FILE__) . './../../../auth.php';
+    require '/auth.php';
 ?>
 
 <div class="modal fade" id="timeModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="modal-body m-2">
-                <form action="./../gateway.php" method="post">
+                <form action="./gateway.php" method="post">
                     <input name="operation" value="cadastrarUsuario" hidden />
                     <div class="form-group row">
                         <label for="nome" class="col-sm-2 col-form-label col-form-label-sm">Nome</label>
@@ -53,4 +53,4 @@
 </div>
 
 <!-- Diretivas -->
-<!--  data-toggle="modal" data-target="#timeModal"-->
+ data-toggle="modal" data-target="#timeModal"

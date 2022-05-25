@@ -4,8 +4,11 @@
         "/" => "pages/login.php",
         "/login" => "pages/login.php",
         "/dashboard" => "pages/dashboard.php",
+        "/partidas" => "pages/partidas.php",
+        "/usuarios.admin" => "pages/usuarios.admin.php",
         "/partidas.admin" => "pages/partidas.admin.php",
         "/teams.admin" => "pages/teams.admin.php",
+        "/profile" => "pages/profile.php",
     ];
     
     
