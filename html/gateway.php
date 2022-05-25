@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-require_once './utilities/functions.utility.php';
-require_once './utilities/validate.utility.php';
-require_once './controller/usuario.controller.php';
-require_once './controller/team.controller.php';
-require_once './controller/partida.controller.php';
+require_once './../utilities/functions.utility.php';
+require_once './../utilities/validate.utility.php';
+require_once './../controller/usuario.controller.php';
+require_once './../controller/team.controller.php';
+require_once './../controller/partida.controller.php';
 
 // Controllers
 $usuarioController = new UsuarioController();

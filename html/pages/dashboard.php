@@ -1,8 +1,10 @@
 <?php
-require_once './../auth.php';
-require_once './../components/header.php';
-require_once './../controller/usuario.controller.php';
-require_once './../controller/team.controller.php';
+
+require_once './auth.php';
+require_once './components/header.php';
+
+require_once './controller/usuario.controller.php';
+require_once './controller/team.controller.php';
 
 $usuarioController = new UsuarioController();
 $teamController = new TeamController();
@@ -13,14 +15,14 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
 <body id="page-top">
     <div id="wrapper">
         <!-- Sidebar -->
-        <?php require_once './../components/sidebar.php'; ?>
+        <?php require_once './components/sidebar.php'; ?>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
                 <!-- NavBar -->
-                <?php require_once './../components/navbar.php'; ?>
+                <?php require_once './components/navbar.php'; ?>
                 <!-- NavBar -->
                 <!-- Begin Page Content CODE! -->
                 <div class="container-fluid">
@@ -137,4 +139,4 @@ $usuario = $usuarioController->getOne($_SESSION['id']);
         <i class="fas fa-angle-up"></i>
     </a> -->
 
-    <?php require_once './../components/footer.php'; ?>
+    <?php require_once './components/footer.php'; ?>

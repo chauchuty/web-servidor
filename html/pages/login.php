@@ -2,10 +2,11 @@
 session_start();
 
 if (isset($_SESSION['id'])) {
-    header("Location: ./dashboard.php");
+    header("Location: ./dashboard");
 }
 
-require_once './../components/header.php';
+require_once './components/header.php';
+
 ?>
 
 <body class="bg-gradient-dark">
@@ -71,4 +72,4 @@ require_once './../components/header.php';
 
     </div>
 
-    <?php require_once './../components/footer.php'; ?>
+    <?php require_once './components/footer.php'; ?>

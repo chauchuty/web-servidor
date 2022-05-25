@@ -1,21 +1,21 @@
 <?php
-require_once './../auth.php';
-require_once './../components/header.php';
-require_once './../controller/partida.controller.php';
-require_once './../controller/team.controller.php';
+require_once './auth.php';
+require_once './components/header.php';
+require_once './controller/partida.controller.php';
+require_once './controller/team.controller.php';
 ?>
 
 <body id="page-top">
     <div id="wrapper">
         <!-- Sidebar -->
-        <?php require_once './../components/sidebar.php'; ?>
+        <?php require_once './components/sidebar.php'; ?>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
                 <!-- NavBar -->
-                <?php require_once './../components/navbar.php'; ?>
+                <?php require_once './components/navbar.php'; ?>
                 <!-- NavBar -->
                 <!-- Begin Page Content CODE! -->
                 <div class="container-fluid">
@@ -80,7 +80,7 @@ require_once './../controller/team.controller.php';
                                             <img src="<?= $vencedor->getEscudo() ?>" width="20">
                                             <?= $vencedor->getNome(); ?>
                                         <?php } else { ?>
-                                            <img src="./../assets/img/loading.svg" width="20">
+                                            <img src="./assets/img/loading.svg" width="20">
                                         <?php } ?>
 
                                     </td>
@@ -126,7 +126,7 @@ require_once './../controller/team.controller.php';
                                     </label>
                                 </td>
                                 <td>
-                                    <img src="./../assets/img/loading.svg" width="20" />
+                                    <img src="./assets/img/loading.svg" width="20" />
                                 </td>
                                 <td>
                                     Data...
@@ -176,7 +176,7 @@ require_once './../controller/team.controller.php';
     </div>
     <!-- End of Page Wrapper -->
 
-    <?php require_once './../components/footer.php'; ?>
+    <?php require_once './components/footer.php'; ?>
     <?php require_once './modals/partida/partida.cadastrar.modal.php'; ?>
     <?php require_once './modals/partida/partida.editar.modal.php'; ?>
     <?php require_once './modals/partida/partida.deletar.modal.php'; ?>

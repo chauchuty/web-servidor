@@ -21,17 +21,15 @@
         Menu Principal
     </div>
 
-
-
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="../pages/dashboard.php">
+        <a class="nav-link" href="/dashboard">
             <i class="fas fa-home"></i>
             <span>Dashboard</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="../pages/partidas.php">
+        <a class="nav-link" href="/partidas">
             <i class="fas fa-calendar-alt"></i>
             <span>Partidas</span></a>
     </li>
@@ -62,21 +60,21 @@
 
         <!-- Nav Item  -->
         <li class="nav-item">
-            <a class="nav-link" href="./usuarios.admin.php">
+            <a class="nav-link" href="./usuarios.admin">
                 <i class="fas fa-users"></i>
                 <span>Usuários</span></a>
         </li>
 
         <!-- Nav Item  -->
         <li class="nav-item">
-            <a class="nav-link" href="./teams.admin.php">
+            <a class="nav-link" href="./teams.admin">
                 <i class="fas fa-flag"></i>
                 <span>Seleções</span></a>
         </li>
 
         <!-- Nav Item  -->
         <li class="nav-item">
-            <a class="nav-link" href="./partidas.admin.php">
+            <a class="nav-link" href="./partidas.admin">
                 <i class="fas fa-calendar"></i>
                 <span>Partidas</span></a>
         </li>
@@ -93,7 +91,7 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link" href="./profile.php">
+        <a class="nav-link" href="./profile">
             <i class="fas fa-user"></i>
             <span>Perfil</span></a>
     </li>
@@ -105,4 +103,4 @@
     </li>
 </ul>
 
-<?php require_once './modals/logout.modal.php' ?>
+<?php './modals/logout.modal' ?>

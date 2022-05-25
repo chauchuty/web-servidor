@@ -1,7 +1,15 @@
 <?php
+
+// $usuario = new Usuario();
+// $usuario->setId(10);
+// echo $usuario->getId();
+
+// die();
+
 require_once './../auth.php';
 require_once './../components/header.php';
 require_once './../controller/usuario.controller.php';
+
 ?>
 
 <body id="page-top">
