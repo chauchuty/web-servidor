@@ -101,6 +101,6 @@ require_once './controller/team.controller.php';
     <!-- End of Page Wrapper -->
 
     <?php require_once './components/footer.php'; ?>
-    <?php require_once './modals/team/team.cadastrar.modal.php'; ?>
-    <?php require_once './modals/team/team.editar.modal.php'; ?>
-    <?php require_once './modals/team//team.deletar.modal.php'; ?>
+    <?php require_once dirname(__FILE__) . '/modals/team/team.cadastrar.modal.php'; ?>
+    <?php require_once dirname(__FILE__) . '/modals/team/team.editar.modal.php'; ?>
+    <?php require_once dirname(__FILE__) . '/modals/team//team.deletar.modal.php'; ?>

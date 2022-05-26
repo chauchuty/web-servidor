@@ -176,10 +176,10 @@ function cadastrarTeam()
         $team->setSigla($_POST['sigla']);
         $team->setEscudo($_POST['escudo']);
         $team = $teamController->insert($team);
-        nextPage('./pages/teams.admin.php', 'success', '3');
+        nextPage('./teams.admin', 'success', '3');
         exit();
     }
-    nextPage('./pages/teams.admin.php', 'error', '3');
+    nextPage('./teams.admin', 'error', '3');
 }
 
 function atualizarTeam()
@@ -192,10 +192,10 @@ function atualizarTeam()
         $team->setSigla($_POST['sigla']);
         $team->setEscudo($_POST['escudo']);
         $team = $teamController->update($team);
-        nextPage('./pages/teams.admin.php', 'success', '4');
+        nextPage('./teams.admin', 'success', '4');
         exit();
     }
-    nextPage('./pages/teams.admin.php', 'error', '4');
+    nextPage('./teams.admin', 'error', '4');
 }
 
 function deletarTeam()
@@ -204,10 +204,10 @@ function deletarTeam()
     $delete = $teamController->delete($_GET['id']);
 
     if ($delete) {
-        nextPage('./pages/teams.admin.php', 'success', '5');
+        nextPage('./teams.admin', 'success', '5');
         exit();
     }
-    nextPage('./pages/teams.admin.php', 'error', '5');
+    nextPage('./teams.admin', 'error', '5');
 }
 
 function cadastrarPartida()
