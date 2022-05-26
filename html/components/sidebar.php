@@ -97,10 +97,16 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+        <a class="nav-link" href="./logout">
             <i class="fas fa-door-open"></i>
             <span>Sair</span></a>
     </li>
+
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-door-open"></i>
+            <span>Sair</span></a>
+    </li> -->
 </ul>
 
 <?php './modals/logout.modal' ?>

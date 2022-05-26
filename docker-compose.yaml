@@ -18,8 +18,6 @@ services:
       - '80:80'
     volumes:
       - ./html:/var/www/html
-      - ./.htaccess:/var/www/html/
-      - ./000-default.conf:/etc/apache2/sites-enabled/
 
   composer:
     image: composer/composer

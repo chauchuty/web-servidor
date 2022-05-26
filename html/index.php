@@ -9,6 +9,7 @@
         "/partidas.admin" => "pages/partidas.admin.php",
         "/teams.admin" => "pages/teams.admin.php",
         "/profile" => "pages/profile.php",
+        "/logout" => "logout.php",
     ];
     
     
